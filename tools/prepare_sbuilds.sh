@@ -45,7 +45,7 @@ deboot="sid"
 dist="sid"
 unset flavor
 arch="riscv64"
-options="--exclude=debfoster --keyring=/etc/apt/trusted.gpg.d/debian-ports-archive-2022.gpg"
+options="--exclude=debfoster --keyring= "
 setup_update_sbuild
 
 #
