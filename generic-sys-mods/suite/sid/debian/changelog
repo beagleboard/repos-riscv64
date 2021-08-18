@@ -1,0 +1,30 @@
+generic-sys-mods (1.20210817.4-0~sid+20210818) sid; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 18 Aug 2021 12:27:24 -0500
+
+generic-sys-mods (1.20210817.4-0~bullseye+20210817) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Aug 2021 15:49:52 -0500
+
+generic-sys-mods (1.20210817.2-0~bullseye+20210817) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Aug 2021 12:23:09 -0500
+
+generic-sys-mods (1.20210809.1-0~bullseye+20210809) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Aug 2021 12:30:47 -0500
+
+generic-sys-mods (1.20210809.0-0~bullseye+20210809) bullseye; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Aug 2021 12:20:17 -0500
+
