@@ -6,7 +6,7 @@ if [ -f /etc/default/generic-sys-mods ] ; then
 	. /etc/default/generic-sys-mods
 else
 	ROOT_DRIVE="/dev/mmcblk0"
-	ROOT_PARTITION="2"
+	ROOT_PARTITION="1"
 fi
 
 echo "#This file is sourced by /usb/bin/bb-growpart" > /etc/default/generic-sys-mods

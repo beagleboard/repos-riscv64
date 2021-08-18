@@ -1,3 +1,9 @@
+generic-sys-mods (1.20210817.5-0~sid+20210818) sid; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 18 Aug 2021 12:28:18 -0500
+
 generic-sys-mods (1.20210817.4-0~sid+20210818) sid; urgency=low
 
   * Rebuild for repos.rcn-ee.com
