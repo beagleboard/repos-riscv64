@@ -26,7 +26,9 @@ runner () {
 
 start_run () {
 	dist="debian"
+	deb_arch="riscv64"
 	suite="sid" ; runner
+	suite="lunar" ; runner
 }
 
 start_run

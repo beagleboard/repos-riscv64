@@ -26,7 +26,9 @@ run () {
 	echo " -- Robert Nelson <robertcnelson@gmail.com>  ${new_date}" >> ${wfile}
 	echo "" >> ${wfile}
 
-	cat ${DIR}/suite/${suite}/debian/changelog >> ${wfile}
+	if [ "x${clear_changelog}" = "x" ] ; then
+		cat ${DIR}/suite/${suite}/debian/changelog >> ${wfile}
+	fi
 	rm ${DIR}/suite/${suite}/debian/changelog
 	mv ${wfile} ${DIR}/suite/${suite}/debian/changelog
 }
@@ -39,6 +41,16 @@ suite="sid"
 if [ -d ${DIR}/suite/${suite}/ ] ; then
 	rcn_ee_version="${sid_version}"
 	cat ${DIR}/version.sh | grep -v sid_version > ${DIR}/new-version.sh
+	echo "${suite}_version=\"~${suite}+${simple_date}\"" >> ${DIR}/new-version.sh
+	mv ${DIR}/new-version.sh ${DIR}/version.sh
+	run
+fi
+
+dist="debian"
+suite="lunar"
+if [ -d ${DIR}/suite/${suite}/ ] ; then
+	rcn_ee_version="${lunar_version}"
+	cat ${DIR}/version.sh | grep -v lunar_version > ${DIR}/new-version.sh
 	echo "${suite}_version=\"~${suite}+${simple_date}\"" >> ${DIR}/new-version.sh
 	mv ${DIR}/new-version.sh ${DIR}/version.sh
 	run

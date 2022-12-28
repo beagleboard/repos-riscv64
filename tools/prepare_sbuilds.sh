@@ -48,4 +48,13 @@ arch="riscv64"
 options="--exclude=debfoster --keyring= "
 setup_update_sbuild
 
+mirror="http://${proxy}${ubuntu_server}"
+deboot="gutsy"
+
+dist="lunar"
+unset flavor
+arch="riscv64"
+options="--exclude=debfoster"
+setup_update_sbuild
+
 #
