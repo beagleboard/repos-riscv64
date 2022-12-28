@@ -1,4 +1,4 @@
-bb-usb-gadgets (1.20220816.0-0~sid+20221228) sid; urgency=low
+bb-usb-gadgets (1.20220816.0-0~lunar+20221228) lunar; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
