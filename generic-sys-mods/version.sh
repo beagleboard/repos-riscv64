@@ -4,7 +4,7 @@
 
 package_name="generic-sys-mods"
 debian_pkg_name="${package_name}"
-package_version="1.20210817.5"
+package_version="1.20220216.1"
 package_source=""
 src_dir=""
 
@@ -17,4 +17,7 @@ debian_version="${package_version}-0"
 debian_untar=""
 debian_patch=""
 
-sid_version="~sid+20210818"
+clear_changelog="enable"
+
+sid_version="~sid+20221228"
+lunar_version="~lunar+20221228"
