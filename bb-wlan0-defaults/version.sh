@@ -2,7 +2,7 @@
 
 package_name="bb-wlan0-defaults"
 debian_pkg_name="${package_name}"
-package_version="1.20221220.0"
+package_version="1.20230105.0"
 package_source=""
 src_dir=""
 
