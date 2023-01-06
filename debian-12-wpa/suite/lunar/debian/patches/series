@@ -9,3 +9,4 @@ upstream-fixes/0001-nl80211-add-extra-ies-only-if-allowed-by-driver.patch
 upstream-fixes/0002-AP-guard-FT-SAE-code-with-CONFIG_IEEE80211R_AP.patch
 allow-legacy-renegotiation.patch
 wpa_service_netdev.patch
+0001-wpa-bind-to-wlan0-enable-both-nl80211-and-wext.patch
