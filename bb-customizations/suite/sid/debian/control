@@ -8,7 +8,7 @@ Standards-Version: 4.5.1
 Homepage: https://github.com/beagleboard/j721e-evm
 
 Package: bb-customizations
-Architecture: arm64
+Architecture: all
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
