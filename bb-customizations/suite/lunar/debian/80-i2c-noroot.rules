@@ -3,5 +3,5 @@
 #udevadm test $(udevadm info --query=path --name=i2c-0)
 #
 SUBSYSTEM=="i2c-dev", GROUP="gpio", ACTION=="add", \
-        RUN+="/bin/chgrp -R gpio '/sys%p'", \
-        RUN+="/bin/chmod -R g=u '/sys%p'"
+        RUN+="/usr/bin/chgrp -R gpio '/sys%p'", \
+        RUN+="/usr/bin/chmod -R g=u '/sys%p'"
