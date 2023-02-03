@@ -1,14 +1,16 @@
-wpa (2:2.10-10bbbio1~lunar+20230106) lunar; urgency=low
+wpa (2:2.10-11bbbio1~lunar+20230203) lunar; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 06 Jan 2023 09:19:36 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 03 Feb 2023 11:46:43 -0600
 
-wpa (2:2.10-10bbbio0~lunar+20230105) lunar; urgency=low
+wpa (2:2.10-11) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  * Drop security level to 0 with OpenSSL 3.0 when using TLS 1.0/1.1
+    (Closes: #1011121, LP: #1958267)
+  * Drop dependency on lsb-base.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 Jan 2023 16:10:42 -0600
+ -- Andrej Shadura <andrewsh@debian.org>  Tue, 31 Jan 2023 12:58:02 +0100
 
 wpa (2:2.10-10) unstable; urgency=medium
 

@@ -16,10 +16,10 @@ git_sha=""
 reprepro_dir="w/${package_name}"
 dl_path="pool/main/${reprepro_dir}/"
 
-debian_version="${package_version}-10"
+debian_version="${package_version}-11"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio1"
 
-sid_version="~sid+20230106"
-lunar_version="~lunar+20230106"
+sid_version="~sid+20230203"
+lunar_version="~lunar+20230203"
