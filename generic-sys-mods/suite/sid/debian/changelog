@@ -1,6 +1,6 @@
-generic-sys-mods (1.20230322.1-0~sid+20230322) sid; urgency=low
+generic-sys-mods (1.20230322.2-0~sid+20230322) sid; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 22 Mar 2023 15:55:48 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 22 Mar 2023 16:11:30 -0500
 
