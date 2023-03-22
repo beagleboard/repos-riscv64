@@ -4,7 +4,7 @@
 
 package_name="bb-customizations"
 debian_pkg_name="${package_name}"
-package_version="1.20230109.2"
+package_version="1.20230322.0"
 package_source=""
 src_dir=""
 
@@ -19,5 +19,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20230109"
-lunar_version="~lunar+20230109"
+sid_version="~sid+20230322"
+lunar_version="~lunar+20230322"
