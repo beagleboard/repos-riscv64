@@ -1,0 +1,13 @@
+[Unit]
+Description=Grow Root Partition
+Before=ssh.service
+ConditionFileIsExecutable=/usr/sbin/bb-growpart
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/bb-growpart
+ExecStartPost=/usr/bin/systemctl enable resize_filesystem
+ExecStartPost=/usr/bin/systemctl disable grow_partition
+
+[Install]
+WantedBy=multi-user.target
