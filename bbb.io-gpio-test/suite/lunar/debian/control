@@ -1,0 +1,15 @@
+Source: bbb.io-gpio-test
+Section: misc
+Priority: extra
+Maintainer: Robert Nelson <robertcnelson@gmail.com>
+Build-Depends:
+ debhelper (>= 10)
+Standards-Version: 4.5.1
+
+Package: bbb.io-gpio-test
+Architecture: riscv64
+Depends:
+ ${shlibs:Depends}
+ , ${misc:Depends}
+Description: BeagleV gpio test
+ BeagleV gpio test

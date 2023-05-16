@@ -1,0 +1,54 @@
+#!/bin/bash
+# set -x
+#
+# gpio could be a function or a command
+# they have the same usage.
+
+# function
+# source gpio
+# gpio args
+function gpio() {
+  local gpio_path=/sys/class/gpio
+  local nr=$2
+  local dir=out
+  local v=0
+
+  if [ -z "$nr" ]; then
+    echo -e "Usage:\n  /usr/bin/beagle-gpio input/set/clear gpio#"
+    return
+  fi
+  [ -d $gpio_path/gpio$nr ] || echo $nr > $gpio_path/export
+  [ -d $gpio_path/gpio$nr ] || {
+    echo "Invalid /usr/bin/beagle-gpio # $nr"
+    return
+  }
+  case "$1" in
+  clear)
+    v=0;;
+  set)
+    v=1;;
+  input)
+    dir=in;;
+  *)
+    echo -e "Usage:\n  /usr/bin/beagle-gpio input/set/clear gpio#"
+    return
+    :;;
+  esac
+  echo $dir > $gpio_path/gpio$nr/direction
+  if [ "$dir" == "out" ]; then
+    echo $v > $gpio_path/gpio$nr/value
+  else
+    cat $gpio_path/gpio$nr/value
+  fi
+  return
+}
+
+# command
+# gpio args
+if [ "${0:0:1}" != "-" ]; then
+  if [ $(basename "$0") == "beagle-gpio" -a "$1" != "" ]; then
+    # echo /usr/bin/beagle-gpio $@
+    /usr/bin/beagle-gpio $@
+  fi
+fi
+

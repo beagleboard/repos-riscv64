@@ -1,0 +1,21 @@
+#!/bin/bash
+
+/usr/bin/beagle-gpio clear 323
+/usr/bin/beagle-gpio clear 420
+/usr/bin/beagle-gpio clear 430
+/usr/bin/beagle-gpio clear 497
+/usr/bin/beagle-gpio clear 432
+/usr/bin/beagle-gpio clear 496
+/usr/bin/beagle-gpio clear 433
+/usr/bin/beagle-gpio clear 496
+/usr/bin/beagle-gpio clear 498
+/usr/bin/beagle-gpio clear 499
+
+/usr/bin/beagle-gpio-pairs 323,420 430,497 432,496 433,496 498,499
+if [ $? -eq 0 ]; then
+	echo "Header mikbus GPIO OK"
+	/usr/bin/beagle-gpio clear 491
+else
+	echo "Header mikbus GPIO FAIL"
+	exit 1
+fi

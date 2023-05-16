@@ -1,0 +1,13 @@
+debian/beagle-aux-funcs /usr/bin
+debian/beagle-gpio /usr/bin
+debian/beagle-gpio-button /usr/bin
+debian/beagle-gpio-loop /usr/bin
+debian/beagle-gpio-pairs /usr/bin
+debian/test_beagleV.sh /usr/bin
+debian/test_debug /usr/bin
+debian/test_eeprom /usr/bin
+debian/test_eth0 /usr/bin
+debian/test_mikbus /usr/bin
+debian/test_p8 /usr/bin
+debian/test_p9 /usr/bin
+debian/test_path /usr/bin

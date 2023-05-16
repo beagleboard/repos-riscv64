@@ -1,0 +1,77 @@
+#!/bin/bash
+# tary, 15:34 2013-11-4
+
+# set -x;
+
+[ "$#" -eq 0 -o "$1" == "-h" -o "$1" == "--help" ] && {
+	echo $0 [-t timeout] KEY1=CODE1 KEY2=CODE2 ...;
+	exit 1;
+}
+
+timeout=1000000
+[ "$1" == "-t" ] && {
+	timeout=$(( $2 * 10 ))
+	shift;shift;
+}
+
+#: ${KEY_EVT_FILE:=/dev/input/event0}
+. /usr/bin/beagle-gpio
+
+display_fifo=${TMPDIR:-"/tmp"}/common_test_fifo
+# display_echo='1'
+# display_result='2'
+
+function display_message() {
+	local msg=$1$2
+	#echo $msg > $display_fifo
+	echo $msg
+}
+
+function get_field() {
+	local delim=$1
+	local line=$2
+	local index=$3
+
+	fields=( `echo $line | tr \'$delim\' ' '` )
+	echo ${fields[$index]}
+}
+
+function wait_code_value() {
+	local c=$1
+	local v=$2
+	local i
+
+	for (( i = 0; i < $timeout; i++ )); do
+		set `/usr/bin/beagle-gpio input $c`
+		if [ $v -eq $1 ]; then
+			break
+		fi
+		sleep 0.1
+	done
+	if (( i >= $timeout )); then
+		exit 1
+	fi
+}
+
+function single_key_test() {
+	local k=$1
+	local c=$2
+
+	display_message $display_echo "Press the key $k"
+	wait_code_value $c 0
+	display_message $display_result "Key $k down"
+	display_message $display_echo "Release the key $k"
+	wait_code_value $c 1
+	display_message $display_result "Key $k down Key $k up"
+	sleep 0.1
+	display_message $display_result ""
+}
+
+for i in $@; do
+	key=$(get_field '=' $i 0)
+	code=$(get_field '=' $i 1)
+	# echo key=$key code=$code
+	single_key_test $key $code
+done
+
+exit 0

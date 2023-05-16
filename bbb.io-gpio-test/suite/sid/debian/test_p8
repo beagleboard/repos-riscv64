@@ -1,0 +1,11 @@
+#!/bin/bash
+
+/usr/bin/beagle-gpio-pairs 469,502 471,470 473,472 475,474 477,476 386,478 384,468 385,500 387,453 455,454 457,456 459,458 463,460 462,464 451,461 450,452 449,448 509,511 507,510 505,508 503,506 501,504
+
+if [ $? -eq 0 ]; then
+	echo "Header P8 GPIO OK"
+	/usr/bin/beagle-gpio clear 490
+else
+	echo "Header P8 GPIO FAIL"
+	exit 1
+fi

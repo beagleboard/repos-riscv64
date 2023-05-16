@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while [ 1 ]
+do
+	i2cdetect -r -y 2
+	sleep 1
+done

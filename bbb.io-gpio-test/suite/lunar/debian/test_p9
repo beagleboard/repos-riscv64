@@ -1,0 +1,11 @@
+#!/bin/bash
+
+/usr/bin/beagle-gpio-pairs 424,421 435,480 433,484 430,485 419,431
+
+if [ $? -eq 0 ]; then
+	echo "Header P9 GPIO OK"
+	/usr/bin/beagle-gpio clear 491
+else
+	echo "Header P9 GPIO FAIL"
+	exit 1
+fi

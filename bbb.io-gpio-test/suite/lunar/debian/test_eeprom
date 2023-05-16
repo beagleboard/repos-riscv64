@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sudo /usr/bin/beagle-gpio clear 438
+eeprom_path="/sys/class/i2c-dev/i2c-0/device/0-0050/eeprom"
+echo "BEAGLEV-AHEAD-A0" > $eeprom_path
+cat $eeprom_path
+sudo /usr/bin/beagle-gpio set 438

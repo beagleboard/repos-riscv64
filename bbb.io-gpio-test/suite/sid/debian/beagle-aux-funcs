@@ -1,0 +1,46 @@
+#!/bin/bash
+
+function get_root_dev() {
+	local fields
+
+	while read line; do
+		fields=( $line )
+		if [ "${fields[2]}" == "/" ]; then
+			break
+		fi
+	done < <(mount)
+	echo ${fields[0]} | sed -re 's/p[0-9]+$//g'
+	return 0
+}
+
+function get_gateway() {
+	local inf
+
+	inf=${1:-eth0}
+#	route -n | grep $inf | grep "UG " | awk '{print $2}'
+	route -n | egrep -m1 "UG " | awk '{print $2}'
+	return 0
+}
+
+function emmc_dev_get() {
+	local dev
+
+	dev=$(ls /dev/mmcblk?boot0)
+	echo -ne "${dev%boot0}"
+	return 0
+}
+
+function sdcard_dev_get() {
+	local i
+
+	for i in $(ls /dev/mmcblk?); do
+		if [ ! -e "${i}boot0" ]; then
+			echo -ne "${i}"
+			break
+		fi
+	done
+	return 0
+}
+
+# echo $(sdcard_dev_get)
+

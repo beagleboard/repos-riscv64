@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#export PATH=/home/beagle/beagle-v-ahead-test:$path;
+cp /usr/bin/beagle-gpio /usr/bin
+
+beagle-gpio set 490
+beagle-gpio set 491
+beagle-gpio set 423
+beagle-gpio set 481
+beagle-gpio set 483

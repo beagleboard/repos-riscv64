@@ -1,0 +1,11 @@
+#!/bin/bash
+
+i=0
+while ((i<=2))
+do
+	/usr/bin/beagle-gpio set $2
+	sleep $1
+	/usr/bin/beagle-gpio clear $2
+	sleep $1
+	i=`expr $i + 1`
+done
