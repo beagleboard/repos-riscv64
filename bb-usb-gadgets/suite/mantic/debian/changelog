@@ -1,6 +1,6 @@
-bb-usb-gadgets (1.20230817.0-0~mantic+20230817) mantic; urgency=low
+bb-usb-gadgets (1.20230817.1-0~mantic+20230817) mantic; urgency=low
 
   * Add ubuntu mantic deb files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Aug 2023 12:51:04 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Aug 2023 18:33:54 -0500
 
