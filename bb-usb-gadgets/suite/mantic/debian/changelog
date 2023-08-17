@@ -1,4 +1,4 @@
-bb-usb-gadgets (1.20230817.0-0~sid+20230817) sid; urgency=low
+bb-usb-gadgets (1.20230817.0-0~mantic+20230817) mantic; urgency=low
 
   * Add ubuntu mantic deb files
 
