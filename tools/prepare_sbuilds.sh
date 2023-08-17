@@ -38,7 +38,7 @@ setup_update_sbuild () {
 
 echo "\$build_arch_all = 1;" > ~/.sbuildrc
 echo "\$build_source = 1;" >> ~/.sbuildrc
-echo "\$distribution = 'bullseye';" >> ~/.sbuildrc
+echo "\$distribution = 'bookworm';" >> ~/.sbuildrc
 
 mirror="http://${proxy}${debian_server}"
 deboot="sid"
@@ -63,6 +63,5 @@ unset flavor
 arch="riscv64"
 options="--exclude=debfoster"
 setup_update_sbuild
-
 
 #
