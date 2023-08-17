@@ -1,6 +1,6 @@
-libusbgx (0.2.0-git20210811.3-0~lunar+20221228) lunar; urgency=low
+libusbgx (0.2.0-git20230728.0-0~lunar+20230817) lunar; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Add ubuntu mantic deb files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 28 Dec 2022 14:08:11 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Aug 2023 12:03:27 -0500
 

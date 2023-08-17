@@ -1,4 +1,4 @@
-libusbgx (0.2.0-git20230728.0-0~sid+20230817) sid; urgency=low
+libusbgx (0.2.0-git20230728.0-0~mantic+20230817) mantic; urgency=low
 
   * Add ubuntu mantic deb files
 
