@@ -4,7 +4,7 @@
 
 package_name="gt"
 debian_pkg_name="${package_name}"
-package_version="0.0.0-git20210712.8"
+package_version="0.0.0-git20210712.9"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
@@ -19,9 +19,6 @@ debian_diff=""
 
 clear_changelog="enable"
 
-buster_version="~buster+20220713"
-bullseye_version="~bullseye+20220713"
-bionic_version="~bionic+20220713"
-focal_version="~focal+20220713"
-sid_version="~sid+20221228"
-lunar_version="~lunar+20221228"
+sid_version="~sid+20230817"
+lunar_version="~lunar+20230817"
+mantic_version="~mantic+20230817"
