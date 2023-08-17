@@ -8,7 +8,7 @@ Build-Depends:
  , cmake
  , docbook-xml
  , libconfig-dev
- , libusbgx
+ , libusbgx-dev
  , pkg-config
  , xsltproc
 Standards-Version: 4.5.1
