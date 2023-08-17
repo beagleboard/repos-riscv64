@@ -188,6 +188,7 @@ start_run () {
 	deb_arch="riscv64"
 	suite="sid" ; runner
 	suite="lunar" ; runner
+	suite="mantic" ; runner
 }
 
 start_run
