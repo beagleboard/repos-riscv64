@@ -58,4 +58,11 @@ arch="riscv64"
 options="--exclude=debfoster"
 setup_update_sbuild
 
+dist="mantic"
+unset flavor
+arch="riscv64"
+options="--exclude=debfoster"
+setup_update_sbuild
+
+
 #
