@@ -1,6 +1,6 @@
-generic-sys-mods (1.20230322.2-0~sid+20230322) sid; urgency=low
+generic-sys-mods (1.20230817.0-0~sid+20230817) sid; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Add ubuntu mantic deb files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 22 Mar 2023 16:11:30 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Aug 2023 11:37:55 -0500
 

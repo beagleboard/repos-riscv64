@@ -42,3 +42,6 @@ override_dh_systemd_start:
 	dh_systemd_start --name=regenerate_ssh_host_keys --no-start
 	dh_systemd_start --name=grow_partition --no-start
 	dh_systemd_start --name=resize_filesystem --no-start
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
