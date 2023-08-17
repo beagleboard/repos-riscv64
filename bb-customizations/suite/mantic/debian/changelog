@@ -1,4 +1,4 @@
-bb-customizations (1.20230817.0-0~lunar+20230817) lunar; urgency=low
+bb-customizations (1.20230817.0-0~mantic+20230817) mantic; urgency=low
 
   * Add ubuntu mantic deb files
 

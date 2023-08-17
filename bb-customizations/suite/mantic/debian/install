@@ -1,0 +1,11 @@
+debian/10-of-symlink.rules /etc/udev/rules.d/
+debian/80-eeprom-noroot.rules /etc/udev/rules.d/
+debian/80-gpio-noroot.rules /etc/udev/rules.d/
+debian/80-i2c-noroot.rules /etc/udev/rules.d/
+debian/85-gpio-noroot.rules /etc/udev/rules.d/
+debian/87-iio-noroot.rules /etc/udev/rules.d/
+debian/88-leds-noroot.rules /etc/udev/rules.d/
+debian/beaglebg.jpg /usr/share/backgrounds/bbb.io/
+debian/beagleboard-logo.svg /usr/share/backgrounds/bbb.io/
+debian/nginx-autoindex /etc/bbb.io/templates/nginx/
+debian/ssh.service /etc/avahi/services/
