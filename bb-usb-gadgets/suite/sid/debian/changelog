@@ -1,6 +1,6 @@
-bb-usb-gadgets (1.20230817.1-0~sid+20230817) sid; urgency=low
+bb-usb-gadgets (1.20230912.0-0~sid+20230912) sid; urgency=low
 
-  * Add ubuntu mantic deb files
+  * Mainline linux is removing RNDIS support, default to only NCM usb0 which works in Windows 11
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Aug 2023 18:33:54 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 12 Sep 2023 13:01:35 -0500
 

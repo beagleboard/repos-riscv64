@@ -1,1 +1,1 @@
-  * Add ubuntu mantic deb files
+  * Mainline linux is removing RNDIS support, default to only NCM usb0 which works in Windows 11
