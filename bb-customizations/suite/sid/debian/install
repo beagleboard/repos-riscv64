@@ -8,4 +8,6 @@ debian/88-leds-noroot.rules /etc/udev/rules.d/
 debian/beaglebg.jpg /usr/share/backgrounds/bbb.io/
 debian/beagleboard-logo.svg /usr/share/backgrounds/bbb.io/
 debian/nginx-autoindex /etc/bbb.io/templates/nginx/
+debian/Cockpit.html /etc/bbb.io/templates/nginx/
+debian/Docs-BeagleBoard.html /etc/bbb.io/templates/nginx/
 debian/ssh.service /etc/avahi/services/
