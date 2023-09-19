@@ -95,7 +95,7 @@ execute_before_dh_clean:
 execute_after_dh_install:
 	# install D-Bus service activation files & configuration
 	install --mode=644 -D wpa_supplicant/dbus/dbus-wpa_supplicant.conf \
-		debian/wpasupplicant/etc/dbus-1/system.d/wpa_supplicant.conf
+		debian/wpasupplicant/usr/share/dbus-1/system.d/wpa_supplicant.conf
 ifeq (,$(filter noudeb,$(DEB_BUILD_PROFILES)))
 	# Install udeb
 	install --mode=755 -D wpa_supplicant/wpa_supplicant-udeb \
@@ -116,3 +116,6 @@ execute_after_dh_installexamples:
 
 %:
 	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz

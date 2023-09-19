@@ -4,14 +4,13 @@ Uploaders:
  Andrej Shadura <andrewsh@debian.org>
 Section: net
 Priority: optional
-Build-Depends: debhelper-compat (= 12),
- dh-exec,
+Build-Depends: debhelper-compat (= 13),
  libdbus-1-dev,
  libssl-dev,
  qtbase5-dev [linux-any] <!pkg.wpa.nogui>,
  libncurses5-dev,
  libpcsclite-dev,
- libnl-3-dev (>= 3.4.0~) [linux-any],
+ libnl-3-dev [linux-any],
  libnl-genl-3-dev [linux-any],
  libnl-route-3-dev [linux-any],
  libpcap-dev [kfreebsd-any],
@@ -32,8 +31,6 @@ Multi-Arch: foreign
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- lsb-base
-Breaks: initscripts (<< 2.88dsf-13.3)
 Description: access point and authentication server for Wi-Fi and Ethernet
  IEEE 802.11 AP and IEEE 802.1X/WPA/WPA2/WPA3/EAP Authenticator
  .
@@ -62,9 +59,8 @@ Build-Profiles: <!pkg.wpa.nogui>
 Multi-Arch: foreign
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- wpasupplicant (>= 0.7.3~),
+ wpasupplicant,
  libqt5svg5
-Recommends: menu
 Description: graphical user interface for wpa_supplicant
  wpagui provides a Qt interface for choosing which configured network
  to connect to. It also provides a method for browsing 802.11 SSID scan
@@ -76,11 +72,10 @@ Architecture: linux-any kfreebsd-any
 Multi-Arch: foreign
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- lsb-base,
  adduser
+Breaks: network-manager (<< 1.36.4-2~)
 Suggests: wpagui,
  libengine-pkcs11-openssl
-Breaks: initscripts (<< 2.88dsf-13.3)
 Description: client support for WPA and WPA2 (IEEE 802.11i)
  wpa-supplicant is a userspace daemon handling connection and authentication
  in wireless and wired networks, primarily secured with the WPA/WPA2/WPA3

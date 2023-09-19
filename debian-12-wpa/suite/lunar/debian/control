@@ -31,7 +31,6 @@ Multi-Arch: foreign
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- lsb-base
 Description: access point and authentication server for Wi-Fi and Ethernet
  IEEE 802.11 AP and IEEE 802.1X/WPA/WPA2/WPA3/EAP Authenticator
  .
@@ -73,7 +72,6 @@ Architecture: linux-any kfreebsd-any
 Multi-Arch: foreign
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- lsb-base,
  adduser
 Breaks: network-manager (<< 1.36.4-2~)
 Suggests: wpagui,
