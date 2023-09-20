@@ -1,3 +1,9 @@
+iwd (2.8-1bbbio2~sid+20230919) sid; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Sep 2023 22:38:17 -0500
+
 iwd (2.8-1bbbio1~sid+20230919) sid; urgency=low
 
   * Rebuild for repos.rcn-ee.com
