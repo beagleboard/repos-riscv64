@@ -1,6 +1,6 @@
-bb-wlan0-defaults (1.20230203.7-0~sid+20230919) sid; urgency=low
+bb-wlan0-defaults (1.20230203.8-0~sid+20230919) sid; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Sep 2023 21:06:54 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Sep 2023 21:26:08 -0500
 
