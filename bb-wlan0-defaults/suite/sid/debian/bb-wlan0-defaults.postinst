@@ -16,6 +16,10 @@ if [ ! -f /etc/systemd/network/wlan0.network ] ; then
 	cp -v /etc/bbb.io/templates/wlan0-DHCP.network /etc/systemd/network/wlan0.network
 fi
 
+if [ -d /etc/NetworkManager/conf.d/ ] ; then
+	cp -v /etc/bbb.io/templates/local-ignore-softap0.conf /etc/NetworkManager/conf.d/
+fi
+
 #DEBHELPER#
 
 exit 0
