@@ -2,7 +2,7 @@
 
 package_name="bb-wlan0-defaults"
 debian_pkg_name="${package_name}"
-package_version="1.20230203.8"
+package_version="1.20230203.9"
 package_source=""
 src_dir=""
 
@@ -17,5 +17,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20230919"
-lunar_version="~lunar+20230919"
+sid_version="~sid+20230920"
+lunar_version="~lunar+20230920"
