@@ -13,5 +13,6 @@ Pre-Depends:
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
+ , iw
 Description: beagleboard.org wlan0 defaults
  wlan0 defaults
