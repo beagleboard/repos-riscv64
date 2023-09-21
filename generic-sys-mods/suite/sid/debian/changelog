@@ -1,6 +1,6 @@
-generic-sys-mods (1.20230921.0-0~sid+20230921) sid; urgency=low
+generic-sys-mods (1.20230921.1-0~sid+20230921) sid; urgency=low
 
   * Add ubuntu mantic deb files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Sep 2023 17:42:49 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Sep 2023 17:52:51 -0500
 
