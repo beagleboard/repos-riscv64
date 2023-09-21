@@ -1,6 +1,6 @@
-bb-wlan0-defaults (1.20230203.9-0~lunar+20230920) lunar; urgency=low
+bb-wlan0-defaults (1.20230921.0-0~lunar+20230921) lunar; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 20 Sep 2023 13:34:12 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Sep 2023 17:32:08 -0500
 
