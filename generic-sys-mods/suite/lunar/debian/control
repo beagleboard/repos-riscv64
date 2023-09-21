@@ -14,7 +14,7 @@ Architecture: riscv64
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
- , systemd (>= 230)
+ , systemd
  , cloud-guest-utils
  , e2fsprogs
  , bsdextrautils

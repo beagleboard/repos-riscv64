@@ -1,6 +1,6 @@
-generic-sys-mods (1.20230817.0-0~lunar+20230817) lunar; urgency=low
+generic-sys-mods (1.20230921.0-0~lunar+20230921) lunar; urgency=low
 
   * Add ubuntu mantic deb files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Aug 2023 11:37:55 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Sep 2023 17:42:49 -0500
 
