@@ -1,6 +1,8 @@
-bb-usb-gadgets (1.20230921.1-0~mantic+20230921) mantic; urgency=low
+bb-usb-gadgets (1.20230922.0-0~mantic+20230922) mantic; urgency=low
 
   * Mainline linux is removing RNDIS support, default to only NCM usb0 which works in Windows 11
+  * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Sep 2023 20:53:57 -0500
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Sep 2023 09:49:04 -0500
 
