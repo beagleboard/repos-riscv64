@@ -101,6 +101,7 @@ write_default_bb_mac_addr () {
 update_default_hostapd () {
 	ssid_append=$(echo ${mac_addr0} | cut -b 13-17 | sed 's/://g' || true)
 	sed -i -e "s:BeagleV-WXYZ:BeagleV-$ssid_append:g" /etc/hostapd/hostapd.conf
+	sed -i -e "s:BeagleV-WXYZ:BeagleV-$ssid_append:g" /etc/hostapd/SoftAp0.conf
 }
 
 get_mac_addr
