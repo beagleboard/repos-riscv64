@@ -1,6 +1,7 @@
-generic-sys-mods (1.20230921.1-0~mantic+20230921) mantic; urgency=low
+generic-sys-mods (1.20230922.0-0~mantic+20230922) mantic; urgency=low
 
   * Add ubuntu mantic deb files
+  * Call bb-setup-mac-address directly in the usb scripts
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 21 Sep 2023 17:52:51 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Sep 2023 09:52:07 -0500
 
