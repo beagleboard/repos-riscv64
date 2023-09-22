@@ -2,6 +2,7 @@
 Description=BeagleBoard.org USB gadgets
 After=usb-gadget.target
 ConditionFileIsExecutable=/usr/bin/bb-start-usb-gadgets
+ConditionFileNotEmpty=/etc/default/bb-mac-addr
 
 [Service]
 Type=forking
