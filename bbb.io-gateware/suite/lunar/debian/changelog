@@ -1,6 +1,6 @@
-bbb.io-gateware (1.20230928.0-0~lunar+20230928) lunar; urgency=low
+bbb.io-gateware (1.20230928.1-0~lunar+20230928) lunar; urgency=low
 
   * Initial BitStream
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 28 Sep 2023 13:39:43 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 28 Sep 2023 14:51:27 -0500
 

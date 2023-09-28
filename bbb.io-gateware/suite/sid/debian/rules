@@ -3,6 +3,9 @@
 # output every command that modifies files on the build system.
 #DH_VERBOSE = 1
 
+override_dh_auto_configure:
+	mkdir -p ./tmp/ ; git -c http.sslVerify=false clone https://gitea.gfnd.rcn-ee.org/RobertCNelson/gateware-snapshots.git ./tmp/
+
 %:
 	dh $@
 

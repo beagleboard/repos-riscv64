@@ -8,12 +8,12 @@ fi
 if [ -d $1 ]
 then
     echo "Changing gateware."
-    if [ -e $1/mpfs_bitstream.spi ]
+    if [ -e $1/LinuxProgramming/mpfs_bitstream.spi ]
     then
-        if [ -e $1/mpfs_dtbo.spi ]
+        if [ -e $1/LinuxProgramming/mpfs_dtbo.spi ]
         then
-            cp -v $1/mpfs_dtbo.spi /lib/firmware/mpfs_dtbo.spi
-            cp -v $1/mpfs_bitstream.spi /lib/firmware/mpfs_bitstream.spi
+            cp -v $1/LinuxProgramming/mpfs_dtbo.spi /lib/firmware/mpfs_dtbo.spi
+            cp -v $1/LinuxProgramming/mpfs_bitstream.spi /lib/firmware/mpfs_bitstream.spi
             sync
             . /usr/share/microchip/gateware/update-gateware.sh
         else
