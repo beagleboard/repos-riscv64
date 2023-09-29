@@ -1,6 +1,7 @@
-bb-customizations (1.20230817.2-0~sid+20230918) sid; urgency=low
+bb-customizations (1.20230929.0-0~sid+20230929) sid; urgency=low
 
   * Add ubuntu mantic deb files
+  * add 81-pwm-noroot.rules for auto export of pwm
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 18 Sep 2023 17:19:44 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 29 Sep 2023 09:08:08 -0500
 

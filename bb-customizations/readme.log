@@ -1,1 +1,2 @@
   * Add ubuntu mantic deb files
+  * add 81-pwm-noroot.rules for auto export of pwm
