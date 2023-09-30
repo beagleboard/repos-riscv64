@@ -12,5 +12,14 @@ include /usr/share/dpkg/default.mk
 %:
 	dh $@ --with systemd
 
+override_dh_installinit:
+	dh_installinit --name=bb-symlinks --no-stop-on-upgrade --no-start
+
+override_dh_systemd_enable:
+	dh_systemd_enable --name=bb-symlinks --no-enable
+
+override_dh_systemd_start:
+	dh_systemd_start --name=bb-symlinks --no-start
+
 override_dh_builddeb:
 	dh_builddeb -- -Zxz
