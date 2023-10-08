@@ -2,7 +2,7 @@
 
 . version.sh
 
-base="/var/www/html/rcn-ee.us/repos/"
+base="/var/www/html/repos/"
 outgoing="/var/www/html/farm/outgoing"
 
 run () {
@@ -19,6 +19,7 @@ run () {
 runner () {
 	repo="${base}${dist}-riscv64/"
 	if [ -d ./suite/${suite}/ ] ; then
+		echo ${suite}
 		run
 	fi
 }
