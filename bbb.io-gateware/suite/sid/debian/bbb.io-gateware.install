@@ -1,4 +1,4 @@
 debian/change-gateware.sh /usr/share/beagleboard/gateware
 debian/update-gateware.sh /usr/share/microchip/gateware
 debian/mcp356x_read.py /usr/share/microchip/gateware
-tmp/BVF-0.2.0/* /usr/share/beagleboard/gateware
+tmp/20231008/* /usr/share/beagleboard/gateware

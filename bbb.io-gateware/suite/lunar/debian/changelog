@@ -1,6 +1,7 @@
-bbb.io-gateware (1.20230928.1-0~lunar+20230928) lunar; urgency=low
+bbb.io-gateware (1.20231008.0-0~lunar+20231009) lunar; urgency=low
 
   * Initial BitStream
+  * 20231008 - top of tree - Add M.2 interface board test.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 28 Sep 2023 14:51:27 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 09 Oct 2023 20:39:07 -0500
 
