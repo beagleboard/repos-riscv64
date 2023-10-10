@@ -1,7 +1,7 @@
-bbb.io-gateware (1.20231010.0-0~mantic+20231010) mantic; urgency=low
+bbb.io-gateware (1.20231010.1-0~mantic+20231010) mantic; urgency=low
 
   * Initial BitStream
   * 20231008 - top of tree - Add M.2 interface board test.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 10 Oct 2023 12:21:57 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 10 Oct 2023 12:59:50 -0500
 
