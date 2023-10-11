@@ -1,7 +1,6 @@
 #!/bin/bash
 
-mkdir -p /dev/bone/
-cp -R /etc/bbb.io/templates/dev/bone /dev/bone/
+cp -R /etc/bbb.io/templates/dev/bone /dev/
 
 i=0
 while [ $i -ne 17 ]
