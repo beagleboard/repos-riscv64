@@ -4,7 +4,7 @@
 
 package_name="bb-customizations"
 debian_pkg_name="${package_name}"
-package_version="1.20231011.3"
+package_version="1.20231011.4"
 package_source=""
 src_dir=""
 
