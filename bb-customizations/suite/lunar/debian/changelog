@@ -1,4 +1,4 @@
-bb-customizations (1.20231011.0-0~lunar+20231011) lunar; urgency=low
+bb-customizations (1.20231011.2-0~lunar+20231011) lunar; urgency=low
 
   * Add ubuntu mantic deb files
   * add 81-pwm-noroot.rules for auto export of pwm
@@ -6,5 +6,5 @@ bb-customizations (1.20231011.0-0~lunar+20231011) lunar; urgency=low
   * eeprom on 1-0050
   * add /dev/bone/ README.md
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 11 Oct 2023 09:45:16 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 11 Oct 2023 11:28:35 -0500
 
