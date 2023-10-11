@@ -1,9 +1,9 @@
 #!/bin/bash
 
-mkdir -p /dev/bone/pwm/
+cp -R /etc/bbb.io/templates/dev/bone /dev/bone/
 
 i=0
-while [ $i -ne 16 ]
+while [ $i -ne 17 ]
 do
 	unset pwm_node
 	if [ -d /sys/class/pwm/pwmchip$i ] ; then
@@ -13,17 +13,22 @@ do
 	case "${pwm_node}" in
 	41400000.pwm)
 		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			mkdir -p /dev/bone/pwm/0/
 			ln -sTf /sys/class/pwm/pwmchip$i/pwm0 /dev/bone/pwm/0/a
 		fi
 		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			mkdir -p /dev/bone/pwm/0/
 			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/0/b
 		fi
 		;;
 	41500000.pwm)
+		cp /etc/bbb.io/templates/dev/bone/pwm/README.md /dev/bone/pwm/
 		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			mkdir -p /dev/bone/pwm/1/
 			ln -sTf /sys/class/pwm/pwmchip$i/pwm0 /dev/bone/pwm/1/a
 		fi
 		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			mkdir -p /dev/bone/pwm/1/
 			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/1/b
 		fi
 		;;

@@ -13,3 +13,8 @@ debian/nginx-autoindex /etc/bbb.io/templates/nginx/
 debian/Cockpit.html /etc/bbb.io/templates/nginx/
 debian/Docs-BeagleBoard.html /etc/bbb.io/templates/nginx/
 debian/ssh.service /etc/avahi/services/
+debian/i2c/README.md /etc/bbb.io/templates/dev/bone/i2c/
+debian/spi/README.md /etc/bbb.io/templates/dev/bone/spi/
+debian/uart/README.md /etc/bbb.io/templates/dev/bone/uart/
+debian/pwm/README.md /etc/bbb.io/templates/dev/bone/pwm/
+debian/counter/README.md /etc/bbb.io/templates/dev/bone/counter/
