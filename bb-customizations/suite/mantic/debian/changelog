@@ -1,9 +1,10 @@
-bb-customizations (1.20231010.0-0~mantic+20231010) mantic; urgency=low
+bb-customizations (1.20231011.0-0~mantic+20231011) mantic; urgency=low
 
   * Add ubuntu mantic deb files
   * add 81-pwm-noroot.rules for auto export of pwm
   * add pwm symlinks
   * eeprom on 1-0050
+  * add /dev/bone/ README.md
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 10 Oct 2023 11:34:06 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 11 Oct 2023 09:45:16 -0500
 

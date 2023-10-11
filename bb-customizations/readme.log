@@ -2,3 +2,4 @@
   * add 81-pwm-noroot.rules for auto export of pwm
   * add pwm symlinks
   * eeprom on 1-0050
+  * add /dev/bone/ README.md
