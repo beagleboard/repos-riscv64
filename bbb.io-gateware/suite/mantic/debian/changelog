@@ -1,7 +1,7 @@
-bbb.io-gateware (1.20231011.0-0~mantic+20231012) mantic; urgency=low
+bbb.io-gateware (1.20231015.0-0~mantic+20231015) mantic; urgency=low
 
   * Initial BitStream
-  * 20231011 - top of tree - Build options: Sanitize number of build options.
+  * 20231015 - top of tree - Insert gateware git version into gateware overlays.
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 12 Oct 2023 13:20:52 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 15 Oct 2023 22:56:41 -0500
 

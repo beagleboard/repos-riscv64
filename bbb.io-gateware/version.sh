@@ -2,7 +2,7 @@
 
 package_name="bbb.io-gateware"
 debian_pkg_name="${package_name}"
-package_version="1.20231011.0"
+package_version="1.20231015.0"
 package_source=""
 src_dir=""
 
@@ -17,6 +17,6 @@ debian_patch=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20231012"
-lunar_version="~lunar+20231012"
-mantic_version="~mantic+20231012"
+sid_version="~sid+20231015"
+lunar_version="~lunar+20231015"
+mantic_version="~mantic+20231015"
