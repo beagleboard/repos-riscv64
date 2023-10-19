@@ -1,7 +1,7 @@
-bbb.io-gateware (1.20231015.0-0~lunar+20231015) lunar; urgency=low
+bbb.io-gateware (1.20231019.0-0~lunar+20231019) lunar; urgency=low
 
   * Initial BitStream
-  * 20231015 - top of tree - Insert gateware git version into gateware overlays.
+  * 20231018 - top of tree
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 15 Oct 2023 22:56:41 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 19 Oct 2023 09:14:10 -0500
 
