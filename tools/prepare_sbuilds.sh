@@ -6,9 +6,8 @@ if ! id | grep -q root; then
 fi
 
 #proxy=""
-proxy="proxy.gfnd.rcn-ee.org:3142/"
 
-debian_server="ftp.ports.debian.org/debian-ports"
+debian_server="deb.debian.org/debian"
 ubuntu_server="ports.ubuntu.com"
 
 builder=`cat /etc/hostname`
