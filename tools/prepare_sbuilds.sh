@@ -63,4 +63,10 @@ arch="riscv64"
 options="--exclude=debfoster"
 setup_update_sbuild
 
+dist="noble"
+unset flavor
+arch="riscv64"
+options="--exclude=debfoster"
+setup_update_sbuild
+
 #
