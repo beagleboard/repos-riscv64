@@ -1,4 +1,4 @@
-bbb.io-keyring (1.20231206.0-0~lunar+20231206) lunar; urgency=low
+bbb.io-keyring (1.20231206.0-0~mantic+20231206) mantic; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 

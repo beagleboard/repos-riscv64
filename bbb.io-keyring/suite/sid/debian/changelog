@@ -1,6 +1,6 @@
-bbb.io-keyring (1.20221228.0-0~sid+20221228) sid; urgency=low
+bbb.io-keyring (1.20231206.0-0~sid+20231206) sid; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 28 Dec 2022 11:49:44 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 06 Dec 2023 12:10:50 -0600
 

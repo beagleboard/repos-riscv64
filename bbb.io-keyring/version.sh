@@ -2,7 +2,7 @@
 
 package_name="bbb.io-keyring"
 debian_pkg_name="${package_name}"
-package_version="1.20221228.0"
+package_version="1.20231206.0"
 package_source=""
 src_dir=""
 
@@ -17,5 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20221228"
-lunar_version="~lunar+20221228"
+sid_version="~sid+20231206"
+lunar_version="~lunar+20231206"
+mantic_version="~mantic+20231206"
+noble_version="~noble+20231206"
