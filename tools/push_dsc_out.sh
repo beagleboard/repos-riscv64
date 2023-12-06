@@ -30,6 +30,7 @@ start_run () {
 	suite="sid" ; runner
 	suite="lunar" ; runner
 	suite="mantic" ; runner
+	suite="noble" ; runner
 }
 
 start_run

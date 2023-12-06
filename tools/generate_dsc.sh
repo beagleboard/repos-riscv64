@@ -179,6 +179,7 @@ run () {
 
 runner () {
 	if [ -d ./suite/${suite}/ ] ; then
+		echo ${suite}
 		run
 	fi
 }
@@ -189,6 +190,7 @@ start_run () {
 	suite="sid" ; runner
 	suite="lunar" ; runner
 	suite="mantic" ; runner
+	suite="noble" ; runner
 }
 
 start_run

@@ -70,6 +70,7 @@ run () {
 
 runner () {
 	if [ -d ./suite/${suite}/ ] ; then
+		echo ${suite}
 		run
 	fi
 }
@@ -79,12 +80,14 @@ start_run () {
 	suite="sid" ; runner
 	suite="lunar" ; runner
 	suite="mantic" ; runner
+	suite="noble" ; runner
 }
 
 cleanup () {
 	suite="sid" ; cleanup_suite
 	suite="lunar" ; cleanup_suite
 	suite="mantic" ; cleanup_suite
+	suite="noble" ; cleanup_suite
 }
 
 start_run
