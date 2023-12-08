@@ -1,4 +1,4 @@
-iwd (2.10-1bbbio0~lunar+20231208) lunar; urgency=low
+iwd (2.10-1bbbio0~mantic+20231208) mantic; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
