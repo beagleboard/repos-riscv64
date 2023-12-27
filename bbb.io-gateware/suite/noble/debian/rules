@@ -4,7 +4,7 @@
 #DH_VERBOSE = 1
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/ ; git -c http.sslVerify=false clone https://git.beagleboard.org/beaglev-fire/gateware-snapshots.git ./tmp/
+	dpkg -x bbb.io-gateware_1.20231226.0-0~lunar_all.deb ./tmp/
 
 %:
 	dh $@

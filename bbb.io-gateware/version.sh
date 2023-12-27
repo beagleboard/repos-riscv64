@@ -2,7 +2,7 @@
 
 package_name="bbb.io-gateware"
 debian_pkg_name="${package_name}"
-package_version="1.20231101.1"
+package_version="1.20231227.0"
 package_source=""
 src_dir=""
 
@@ -14,6 +14,8 @@ dl_path="pool/main/${reprepro_dir}/"
 debian_version="${package_version}-0"
 debian_untar=""
 debian_patch=""
+
+debian_dl_1="https://git.beagleboard.org/beaglev-fire/gateware-snapshots/-/raw/main/BVF-0.4.0-26-g0d225e4/bbb.io-gateware_1.20231226.0-0~lunar_all.deb"
 
 clear_changelog="enable"
 
