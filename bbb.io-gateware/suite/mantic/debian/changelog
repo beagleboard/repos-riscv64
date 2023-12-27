@@ -1,6 +1,6 @@
-bbb.io-gateware (1.20231227.0-0~mantic+20231227) mantic; urgency=low
+bbb.io-gateware (1.20231227.1-0~mantic+20231227) mantic; urgency=low
 
   * BVF-0.4.0-26-g0d225e4
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Dec 2023 14:28:07 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Dec 2023 14:37:26 -0600
 

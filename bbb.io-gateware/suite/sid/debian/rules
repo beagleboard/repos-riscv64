@@ -1,10 +1,13 @@
 #!/usr/bin/make -f
 # See debhelper(7) (uncomment to enable)
 # output every command that modifies files on the build system.
-#DH_VERBOSE = 1
+DH_VERBOSE = 1
+
+VERSION="BVF-0.4.0-26-g0d225e4"
 
 override_dh_auto_configure:
-	dpkg -x bbb.io-gateware_1.20231226.0-0~lunar_all.deb ./tmp/
+	dpkg -x ./debian/bbb.io-gateware*.deb ./tmp/
+	echo "$(VERSION)" > ./tmp/usr/share/beagleboard/gateware/version.txt
 
 %:
 	dh $@
