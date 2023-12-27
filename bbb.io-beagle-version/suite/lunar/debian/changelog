@@ -1,0 +1,6 @@
+bb-beagle-version (1.20231227.0-0~lunar+20231227) lunar; urgency=low
+
+  * Add initial support for BeagleV-Fire
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Dec 2023 15:48:45 -0600
+
