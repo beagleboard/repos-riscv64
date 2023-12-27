@@ -11,6 +11,7 @@ Architecture: all
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
+ , bb-beagle-version
  , mtd-utils
 Description: bbb.io-gateware
  bbb.io-gateware
