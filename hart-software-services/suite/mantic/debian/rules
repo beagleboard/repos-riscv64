@@ -1,7 +1,6 @@
 #!/usr/bin/make -f
 
-# Uncomment this to turn on verbose mode.
-export DH_VERBOSE=1
+DEB_BUILD_OPTIONS=noautodbgsym
 
 # Disable dh_auto_clean
 override_dh_auto_clean:
