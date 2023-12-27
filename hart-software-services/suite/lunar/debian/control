@@ -1,0 +1,21 @@
+Source: hart-software-services
+Section: utils
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper-compat (=13),
+ libelf-dev,
+ libssl-dev,
+ libyaml-dev
+ , ca-certificates
+ , git
+Standards-Version: 4.6.1
+Homepage: https://github.com/polarfire-soc/hart-software-services
+Rules-Requires-Root: no
+
+Package: hart-payload-generator
+Architecture: riscv64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Hart Software Service Payload Generator
+ This tool creates a formatted payload image for the Hart Software Service
+ zero-stage bootloader on PolarFire SoC, given a configuration file and a
+ set of ELF binaries.

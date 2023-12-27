@@ -1,0 +1,5 @@
+#
+# baremetal.elf is used as a payload for testing and not distributed.
+#
+source-is-missing src/tools/hss-payload-generator/test/baremetal.elf
+no-manual-page usr/bin/hss-payload-generator

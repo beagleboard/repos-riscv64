@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+override_dh_auto_configure:
+	git clone -b v2023.02 https://github.com/polarfire-soc/hart-software-services.git --depth=1 ./src/
+
+%:
+	dh $@ --sourcedirectory=src/tools/hss-payload-generator
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
