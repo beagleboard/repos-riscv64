@@ -3,6 +3,9 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
+# Disable dh_auto_clean
+override_dh_auto_clean:
+
 override_dh_auto_configure:
 	git clone -b v2023.02 https://github.com/polarfire-soc/hart-software-services.git --depth=1 ./src/
 
