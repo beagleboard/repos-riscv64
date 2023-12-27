@@ -4,7 +4,7 @@
 #DH_VERBOSE = 1
 
 override_dh_auto_configure:
-	mkdir -p ./tmp/ ; git -c http.sslVerify=false clone https://gitea.gfnd.rcn-ee.org/RobertCNelson/gateware-snapshots.git ./tmp/
+	mkdir -p ./tmp/ ; git -c http.sslVerify=false clone https://git.beagleboard.org/beaglev-fire/gateware-snapshots.git ./tmp/
 
 %:
 	dh $@

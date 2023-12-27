@@ -1,4 +1,4 @@
-bbb.io-gateware (1.20231101.1-0~sid+20231227) sid; urgency=low
+bbb.io-gateware (1.20231101.1-0~noble+20231227) noble; urgency=low
 
   * Initial BitStream
   * BVF-0.4.0
