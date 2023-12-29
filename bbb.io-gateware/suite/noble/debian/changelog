@@ -1,6 +1,6 @@
-bbb.io-gateware (1.20231227.2-0~noble+20231227) noble; urgency=low
+bbb.io-gateware (1.20231229.0-0~noble+20231229) noble; urgency=low
 
-  * BVF-0.4.0-26-g0d225e4
+  * BVF-0.4.0-27-g7078de9
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Dec 2023 16:01:47 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 29 Dec 2023 10:11:02 -0600
 
