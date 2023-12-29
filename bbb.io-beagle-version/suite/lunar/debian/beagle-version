@@ -74,20 +74,39 @@ if [ -d /proc/device-tree/chosen/overlays/ ] ; then
 	ls /proc/device-tree/chosen/overlays/ -p | grep -v / | grep -v name | sed 's/^/UBOOT: Loaded Overlay:[/' | sed 's/$/]/'
 fi
 
-if [ -f /proc/device-tree/chosen/overlays/DEFAULT-CAPE-GATEWARE ] ; then
-	version=$(cat /proc/device-tree/chosen/overlays/DEFAULT-CAPE-GATEWARE | head -n1 || true)
-	echo "UBOOT: Loaded Overlay:[DEFAULT-CAPE-GATEWARE]:[${version}]"
-fi
+if [ -f /sys/kernel/debug/fpga/microchip_exec_update ] ; then
 
-if [ -f /proc/device-tree/chosen/overlays/PCIE-M2-GATEWARE ] ; then
-	version=$(cat /proc/device-tree/chosen/overlays/PCIE-M2-GATEWARE | head -n1 || true)
-	echo "UBOOT: Loaded Overlay:[PCIE-M2-GATEWARE]:[${version}]"
-fi
+	###FIXME: loop over directory and dummp file...
+	if [ -f /proc/device-tree/chosen/overlays/DEFAULT-CAPE-GATEWARE ] ; then
+		version=$(cat /proc/device-tree/chosen/overlays/DEFAULT-CAPE-GATEWARE | head -n1 || true)
+		echo "UBOOT: Loaded Overlay:[DEFAULT-CAPE-GATEWARE]:[${version}]"
+	fi
 
-if [ -f /usr/share/beagleboard/gateware/version.txt ] ; then
-	version=$(cat /usr/share/beagleboard/gateware/version.txt | head -n1 || true)
-	echo "SYSTEM: Gateware Version:[${version}]"
-	pkg="bbb.io-gateware" ; dpkg_check_version
+	if [ -f /proc/device-tree/chosen/overlays/MINIMAL-CAPE-GATEWARE ] ; then
+		version=$(cat /proc/device-tree/chosen/overlays/MINIMAL-CAPE-GATEWARE | head -n1 || true)
+		echo "UBOOT: Loaded Overlay:[MINIMAL-CAPE-GATEWARE]:[${version}]"
+	fi
+
+	if [ -f /proc/device-tree/chosen/overlays/NO-M2-GATEWARE ] ; then
+		version=$(cat /proc/device-tree/chosen/overlays/NO-M2-GATEWARE | head -n1 || true)
+		echo "UBOOT: Loaded Overlay:[NO-M2-GATEWARE]:[${version}]"
+	fi
+
+	if [ -f /proc/device-tree/chosen/overlays/PCIE-M2-GATEWARE ] ; then
+		version=$(cat /proc/device-tree/chosen/overlays/PCIE-M2-GATEWARE | head -n1 || true)
+		echo "UBOOT: Loaded Overlay:[PCIE-M2-GATEWARE]:[${version}]"
+	fi
+
+	if [ -f /proc/device-tree/chosen/overlays/ROBOTICS-CAPE-GATEWARE ] ; then
+		version=$(cat /proc/device-tree/chosen/overlays/ROBOTICS-CAPE-GATEWARE | head -n1 || true)
+		echo "UBOOT: Loaded Overlay:[ROBOTICS-CAPE-GATEWARE]:[${version}]"
+	fi
+
+	if [ -f /usr/share/beagleboard/gateware/version.txt ] ; then
+		version=$(cat /usr/share/beagleboard/gateware/version.txt | head -n1 || true)
+		echo "SYSTEM: Gateware Version:[${version}]"
+		pkg="bbb.io-gateware" ; dpkg_check_version
+	fi
 fi
 
 pkg="bb-customizations" ; dpkg_check_version
@@ -105,8 +124,10 @@ echo "cmdline:[`cat /proc/cmdline`]"
 
 echo "lsusb"
 lsusb || true
-echo "lspci"
-lspci || true
+if [ -d /proc/bus/pci/ ] ; then
+	echo "lspci"
+	lspci || true
+fi
 echo "END"
 
 #

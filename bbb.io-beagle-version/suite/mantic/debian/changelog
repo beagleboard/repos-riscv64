@@ -1,6 +1,6 @@
-bb-beagle-version (1.20231227.0-0~mantic+20231227) mantic; urgency=low
+bb-beagle-version (1.20231229.0-0~mantic+20231229) mantic; urgency=low
 
   * Add initial support for BeagleV-Fire
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 27 Dec 2023 15:48:45 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 29 Dec 2023 10:07:03 -0600
 
