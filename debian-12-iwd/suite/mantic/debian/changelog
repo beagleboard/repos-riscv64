@@ -1,14 +1,22 @@
-iwd (2.11-1bbbio0~mantic+20231219) mantic; urgency=low
+iwd (2.12-1bbbio0~mantic+20240103) mantic; urgency=low
 
   * Rebuild for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 19 Dec 2023 23:04:51 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 03 Jan 2024 12:26:52 -0600
 
-iwd (2.10-1bbbio0~mantic+20231208) mantic; urgency=low
+iwd (2.12-1) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  [ upstream ]
+  * new release
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 08 Dec 2023 11:54:45 -0600
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 30 Dec 2023 03:44:28 +0100
+
+iwd (2.11-1) unstable; urgency=medium
+
+  [ upstream ]
+  * new release
+
+ -- Jonas Smedegaard <dr@jones.dk>  Fri, 15 Dec 2023 22:28:36 +0100
 
 iwd (2.10-1) unstable; urgency=medium
 

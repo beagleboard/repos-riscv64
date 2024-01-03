@@ -7,7 +7,7 @@ mirror="http://http.debian.net/debian"
 
 package_name="iwd"
 debian_pkg_name="${package_name}"
-package_version="2.11"
+package_version="2.12"
 package_source="${debian_pkg_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}-${package_version}"
 
@@ -21,6 +21,6 @@ debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
 local_patch="bbbio0"
 
-sid_version="~sid+20231219"
-lunar_version="~lunar+20231219"
-mantic_version="~mantic+20231219"
+sid_version="~sid+20240103"
+lunar_version="~lunar+20240103"
+mantic_version="~mantic+20240103"
