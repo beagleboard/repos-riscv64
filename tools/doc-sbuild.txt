@@ -6,8 +6,8 @@ sudo sbuild-shell source:sid-riscv64-sbuild
 apt update ; apt upgrade -yq ; \
 echo "deb http://192.168.1.10/debian sid main" > /etc/apt/sources.list ; \
 echo "deb-src http://192.168.1.10/debian sid main" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 sid main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 sid main" >> /etc/apt/sources.list.d/beagle.list ; \
+echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 sid main" > /etc/apt/sources.list.d/beagle.list ; \
+echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 sid main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
@@ -18,8 +18,8 @@ sudo sbuild-shell source:lunar-riscv64-sbuild
 apt update ; apt upgrade -yq ; \
 echo "deb http://192.168.1.10:3142/ports.ubuntu.com lunar main universe" > /etc/apt/sources.list ; \
 echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com lunar main universe" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 lunar main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 lunar main" >> /etc/apt/sources.list.d/beagle.list ; \
+echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 lunar main" > /etc/apt/sources.list.d/beagle.list ; \
+echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 lunar main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
@@ -30,8 +30,8 @@ sudo sbuild-shell source:mantic-riscv64-sbuild
 apt update ; apt upgrade -yq ; \
 echo "deb http://192.168.1.10:3142/ports.ubuntu.com mantic main universe" > /etc/apt/sources.list ; \
 echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com mantic main universe" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 mantic main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 mantic main" >> /etc/apt/sources.list.d/beagle.list ; \
+echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 mantic main" > /etc/apt/sources.list.d/beagle.list ; \
+echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 mantic main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
@@ -42,8 +42,8 @@ sudo sbuild-shell source:noble-riscv64-sbuild
 apt update ; apt upgrade -yq ; \
 echo "deb http://192.168.1.10:3142/ports.ubuntu.com noble main universe" > /etc/apt/sources.list ; \
 echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com noble main universe" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 noble main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.net/debian-riscv64 noble main" >> /etc/apt/sources.list.d/beagle.list ; \
+echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 noble main" > /etc/apt/sources.list.d/beagle.list ; \
+echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 noble main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt update ; apt upgrade -yq ; apt clean ; echo "done..." ; exit
