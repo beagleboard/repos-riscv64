@@ -2,7 +2,7 @@
 
 package_name="bb-usb-gadgets"
 debian_pkg_name="${package_name}"
-package_version="1.20230926.1"
+package_version="1.20240314.0"
 package_source=""
 src_dir=""
 
@@ -17,6 +17,7 @@ debian_patch=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20230926"
-lunar_version="~lunar+20230926"
-mantic_version="~mantic+20230926"
+sid_version="~sid+20240417"
+lunar_version="~lunar+20240417"
+mantic_version="~mantic+20240417"
+noble_version="~noble+20240417"
