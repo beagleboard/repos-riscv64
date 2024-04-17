@@ -18,7 +18,7 @@ dl_path="pool/main/${reprepro_dir}/"
 debian_version="${package_version}-3.1"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
 debian_patch=""
-local_patch="bbbio2"
+local_patch="bbbio3"
 
 sid_version="~sid+20240417"
 lunar_version="~lunar+20240417"
