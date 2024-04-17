@@ -1,0 +1,262 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use IO::File;
+use IO::Pipe;
+use feature 'switch';
+
+my $call_reboot = 0;
+
+my ($filename, $conf);
+
+$filename = '/boot/firmware/sysconf.txt';
+
+logger('info', "Reading the system configuration settings from $filename");
+$conf = read_conf($filename);
+
+if (my $pass = delete($conf->{root_pw})) {
+    my $pipe;
+    logger('debug', 'Resetting root password');
+    unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
+	my $err = $!;
+	logger('error', "Could not run chpasswd: $err");
+	die $err;
+    }
+    $pipe->print("root:$pass");
+    close($pipe);
+    $call_reboot = 1;
+}
+
+if (my $user_pass = delete($conf->{debian_user_pw})) {
+    my $pipe;
+    logger('debug', 'Resetting debian password');
+    unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
+	my $err = $!;
+	logger('error', "Could not run chpasswd: $err");
+	die $err;
+    }
+    $pipe->print("debian:$user_pass");
+    close($pipe);
+    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
+    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
+    $call_reboot = 1;
+}
+
+if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
+    my $fh;
+    logger('debug', "Adding key to root's authorized_keys");
+    if(! -d "/root/.ssh") {
+        if(!mkdir("/root/.ssh", 0700)) {
+            my $err = sprintf("Could not create /root/.ssh directory: %s", $!);
+            logger('error', $err);
+            die $err;
+        }
+    }
+
+    unless ($fh = IO::File->new('/root/.ssh/authorized_keys', 'w', 0600)) {
+        my $err = $!;
+        logger('error', "Could not write /root/.ssh/authorized_keys: $err");
+        die $err;
+    }
+    $fh->print($root_authorized_key);
+    $fh->close;
+}
+
+if (my $user_authorized_key = delete($conf->{debian_user_authorized_key})) {
+    my $fh;
+    logger('debug', "Adding key to debian's authorized_keys");
+    if(! -d "/home/debian/.ssh") {
+        if(!mkdir("/home/debian/.ssh", 0700)) {
+            my $err = sprintf("Could not create /home/debian/.ssh directory: %s", $!);
+            logger('error', $err);
+            die $err;
+        }
+    }
+
+    unless ($fh = IO::File->new('/home/debian/.ssh/authorized_keys', 'w', 0600)) {
+        my $err = $!;
+        logger('error', "Could not write /home/debian/.ssh/authorized_keys: $err");
+        die $err;
+    }
+    $fh->print($user_authorized_key);
+    $fh->close;
+
+    my $user = 1000;
+    my $group = 1000;
+    system("chown -R $user:$group /home/debian/.ssh/");
+}
+
+if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
+    logger('debug', "Setting up iwd with '$iwd_psk_file'");
+    if( -f "/boot/firmware/services/$iwd_psk_file") {
+        system("cp /boot/firmware/services/$iwd_psk_file /var/lib/iwd/");
+        system("dos2unix -q /var/lib/iwd/$iwd_psk_file");
+        system("systemctl restart iwd.service");
+    }
+}
+
+if (my $hostapd_file = delete($conf->{hostapd_file})) {
+    logger('debug', "Setting up hostapd with '$hostapd_file'");
+    if( -f "/boot/firmware/services/$hostapd_file") {
+        system("cp /boot/firmware/services/$hostapd_file /etc/hostapd/SoftAp0.conf");
+        system("dos2unix -q /etc/hostapd/SoftAp0.conf");
+        system("systemctl restart hostapd\@SoftAp0.service");
+    }
+}
+
+if (my $name = delete($conf->{hostname})) {
+    my $fh;
+    logger('debug', "Setting hostname to '$name'");
+    unless ($fh = IO::File->new('/etc/hostname', 'w')) {
+	my $err = $!;
+	logger('error', "Could not write hostname '$name': $err");
+	die $err;
+    }
+    $fh->print($name);
+    $fh->close;
+    system('hostname', '--file', '/etc/hostname');
+
+    my $fha;
+    logger('debug', "Adding '$name' to /etc/hosts");
+    unless ($fha = IO::File->new('/etc/hosts', 'w')) {
+	my $err = $!;
+	logger('error', "Could not write to /etc/hosts '$name': $err");
+	die $err;
+    }
+    $fha->print("127.0.0.1	localhost\n");
+    $fha->print("127.0.1.1	", $name, ".localdomain	", $name, "\n");
+    $fha->print("\n");
+    $fha->print("# The following lines are desirable for IPv6 capable hosts\n");
+    $fha->print("::1		localhost ip6-localhost ip6-loopback\n");
+    $fha->print("ff02::1		ip6-allnodes\n");
+    $fha->print("ff02::2		ip6-allrouters\n");
+    $fha->close;
+    $call_reboot = 1;
+}
+
+if (my $legacy_rndis_support = delete($conf->{legacy_rndis_support})) {
+    logger('debug', "Enabling Legacy RNDIS support");
+    if( -f "/etc/default/bb-boot") {
+        system("sed -i -e 's:USB_RNDIS_DISABLED=yes:#USB_RNDIS_DISABLED=yes:g' /etc/default/bb-boot");
+        $call_reboot = 1;
+    }
+}
+
+rewrite_conf_file($filename, $conf);
+
+if ($call_reboot) {
+    system("systemctl reboot");
+}
+
+exit 0;
+
+sub read_conf {
+    my ($file, $conf, $fh);
+    $file = shift;
+
+    $conf = {};
+    unless ($fh = IO::File->new($filename, 'r')) {
+	my $err = $!;
+	logger('error', "Could not read from configuration file '$filename': $err");
+	# Not finding the config file is not fatal: there is just
+	# nothing to configure!
+	return $conf;
+    }
+    while (my $line = $fh->getline) {
+	my ($key, $value);
+	# Allow for comments, and properly ignore them
+	$line =~ s/#.+//;
+	if ( ($key, $value) = ($line =~ m/^\s*([^=]+)\s*=\s*(.*)\s*$/)) {
+	    $key = lc($key);
+	    if (exists($conf->{$key})) {
+		logger('warn',
+		       "Repeated configuration key: $key. " .
+		       "Overwriting with new value ($value)");
+	    }
+	    $conf->{$key} = $value;
+	}
+    }
+    $fh->close;
+
+    return $conf;
+}
+
+sub logger {
+    my ($prio, $msg) = @_;
+    system('logger', '-p', "daemon.$prio",
+	   '-t', 'bbbio-set-sysconf', $msg);
+}
+
+sub rewrite_conf_file {
+    my ($filename, $conf) = @_;
+    my $fh;
+    unless ($fh = IO::File->new($filename, 'w')) {
+	my $err = $!;
+	logger('error', "Could not write to configuration file '$filename': $err");
+	die $err;
+    }
+    $fh->print(
+q(# This file will be automatically evaluated and installed at next boot
+# time, and regenerated (to avoid leaking passwords and such information).
+#
+# To force it to be evaluated immediately, you can run (as root):
+#
+#     /usr/sbin/bbbio-set-sysconf
+#
+# You can disable the file evaluation by disabling the bbbio-set-sysconf
+# service in systemd:
+#
+#     systemctl disable bbbio-set-sysconf
+#
+# Comments (all portions of a line following a '#' character) are
+# ignored. This file is read line by line. Valid
+# configuration lines are of the form 'key=value'. Whitespace around
+# 'key' and 'value' is ignored. This file will be _regenerated_ every
+# time it is evaluated.
+#
+# We follow the convention to indent with one space comments, and
+# leave no space to indicate the line is an example that could be
+# uncommented.
+
+# root_pw - Set a password for the root user (by default, it allows
+# for a passwordless login)
+#root_pw=FooBar
+
+# root_authorized_key - Set an authorized key for a root ssh login
+#root_authorized_key=
+
+# debian_user_pw - Set a password for the debian user (by default, it allows
+# for a passwordless login)
+#debian_user_pw=FooBar
+
+# debian_user_authorized_key - Set an authorized key for a debian ssh login
+#debian_user_authorized_key=
+
+# iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
+#iwd_psk_file=
+
+# hostapd_file - Set a configuration for hostapd https://wiki.gentoo.org/wiki/Hostapd
+#hostapd_file=SoftAp0.conf
+
+# hostname - Set the system hostname.
+#hostname=BeagleBone
+
+# Legacy RNDIS support - Load usb gadget with RNDIS Support for Windows XP, Vista, 7, 8, and 10
+#legacy_rndis_support=enable
+));
+
+    if (scalar keys %$conf) {
+	logger('warn', 'Unprocessed keys left in $filename: ' .
+	       join(', ', sort keys %$conf));
+	$fh->print(
+q(
+# We found the following unhandled keys - That means, the
+# configuration script does not know how to handle them. Please
+# double-check them!
+));
+	$fh->print(join('', map {sprintf("%s=%s\n", $_, $conf->{$_})} sort keys %$conf));
+    }
+    $fh->close;
+}
+
+
