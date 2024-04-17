@@ -1,0 +1,43 @@
+#!/bin/bash
+
+mkdir -p /dev/bone/pwm/
+cp -R /etc/bbb.io/templates/dev/bone /dev/
+
+i=0
+while [ $i -ne 17 ]
+do
+	unset pwm_node
+	if [ -d /sys/class/pwm/pwmchip$i ] ; then
+		pwm_node=$(udevadm info /sys/class/pwm/pwmchip$i/ | grep DEVPATH | awk -F 'fabric-bus@40000000/' '{print $2}' | awk -F '/' '{print $1}')
+	fi
+
+	case "${pwm_node}" in
+	41400000.pwm)
+		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			# P9.14
+			mkdir -p /dev/bone/pwm/1/
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm0 /dev/bone/pwm/1/a
+		fi
+		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			# P9.16
+			mkdir -p /dev/bone/pwm/1/
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/1/b
+		fi
+		;;
+	41500000.pwm)
+		if [ -d /sys/class/pwm/pwmchip$i/pwm0/ ] ; then
+			# P8.19
+			mkdir -p /dev/bone/pwm/2/
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm0 /dev/bone/pwm/2/a
+		fi
+		if [ -d /sys/class/pwm/pwmchip$i/pwm1/ ] ; then
+			# P8.13
+			mkdir -p /dev/bone/pwm/2/
+			ln -sTf /sys/class/pwm/pwmchip$i/pwm1/ /dev/bone/pwm/2/b
+		fi
+		;;
+	esac
+
+	i=$(($i+1))
+done
+

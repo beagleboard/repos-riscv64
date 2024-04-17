@@ -1,4 +1,4 @@
-bb-customizations (1.20240417.0-0~mantic+20240417) mantic; urgency=low
+bb-customizations (1.20240417.0-0~noble+20240417) noble; urgency=low
 
   * Add ubuntu mantic deb files
   * add 81-pwm-noroot.rules for auto export of pwm
