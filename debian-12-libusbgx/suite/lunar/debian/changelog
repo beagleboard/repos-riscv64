@@ -1,3 +1,9 @@
+libusbgx (0.2.0-3.1bbbio2~lunar+20240417) lunar; urgency=low
+
+  * Merge to: https://github.com/linux-usb-gadgets/libusbgx/commit/a5bfa81017a9b2064bc449cf74f5f9d106445f62
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 17 Apr 2024 13:46:54 -0500
+
 libusbgx (0.2.0-3.1bbbio1~lunar+20240417) lunar; urgency=low
 
   * Merge to: https://github.com/linux-usb-gadgets/libusbgx/commit/a5bfa81017a9b2064bc449cf74f5f9d106445f62
