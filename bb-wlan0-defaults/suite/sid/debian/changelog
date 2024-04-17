@@ -1,6 +1,6 @@
-bb-wlan0-defaults (1.20230922.0-0~sid+20230922) sid; urgency=low
+bb-wlan0-defaults (1.20230922.1-0~sid+20240417) sid; urgency=low
 
   * udev call hostapd@SoftAp0.service directly
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 22 Sep 2023 10:29:39 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 17 Apr 2024 15:32:50 -0500
 

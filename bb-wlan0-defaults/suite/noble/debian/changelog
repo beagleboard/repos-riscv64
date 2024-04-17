@@ -1,4 +1,4 @@
-bb-wlan0-defaults (1.20230922.1-0~lunar+20240417) lunar; urgency=low
+bb-wlan0-defaults (1.20230922.1-0~noble+20240417) noble; urgency=low
 
   * udev call hostapd@SoftAp0.service directly
 
