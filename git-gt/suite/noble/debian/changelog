@@ -1,4 +1,4 @@
-gt (0.0.0-git20240228.0-0~lunar+20240417) lunar; urgency=low
+gt (0.0.0-git20240228.0-0~noble+20240417) noble; urgency=low
 
   * Add ubuntu mantic deb files
 

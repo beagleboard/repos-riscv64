@@ -4,12 +4,12 @@
 
 package_name="gt"
 debian_pkg_name="${package_name}"
-package_version="0.0.0-git20210712.9"
+package_version="0.0.0-git20240228.0"
 package_source="${package_name}_${package_version}.orig.tar.xz"
 src_dir="${package_name}_${package_version}"
 
 git_repo="https://github.com/linux-usb-gadgets/gt"
-git_sha="31b135546d0d1733b5b7ca19f48748c06824d65a"
+git_sha="01243da097374fea3668751d7ee2129a7e312f24"
 reprepro_dir="g/${package_name}"
 dl_path=""
 
@@ -19,6 +19,7 @@ debian_diff=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20230817"
-lunar_version="~lunar+20230817"
-mantic_version="~mantic+20230817"
+sid_version="~sid+20240417"
+lunar_version="~lunar+20240417"
+mantic_version="~mantic+20240417"
+noble_version="~noble+20240417"

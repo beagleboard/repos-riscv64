@@ -1,6 +1,6 @@
-gt (0.0.0-git20210712.9-0~mantic+20230817) mantic; urgency=low
+gt (0.0.0-git20240228.0-0~mantic+20240417) mantic; urgency=low
 
   * Add ubuntu mantic deb files
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 17 Aug 2023 12:10:14 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 17 Apr 2024 12:48:26 -0500
 
