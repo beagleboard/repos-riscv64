@@ -7,9 +7,6 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 %:
 	dh $@
 
-execute_after_dh_auto_build:
-	$(MAKE) doxygen-run
-
 override_dh_auto_install-indep:
 	dh_installdocs --indep -plibusbgx-doc \
 		doxygen-doc/html
@@ -18,6 +15,9 @@ override_dh_auto_install-indep:
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		--disable-examples
+
+execute_after_dh_auto_build:
+		$(MAKE) doxygen-run
 
 override_dh_builddeb:
 	dh_builddeb -- -Zxz

@@ -9,7 +9,7 @@ Copyright: 2013 Linaro Limited
 License:   LGPL-2.1+
 
 Files:     debian/*
-Copyright: 2022 Manuel Traut
+Copyright: 2022-2023 Manuel Traut
 License:   LGPL-2.1+
 
 Files:     m4/libtool.m4

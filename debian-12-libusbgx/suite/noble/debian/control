@@ -3,12 +3,12 @@ Section: libs
 Priority: optional
 Maintainer: Manuel Traut <manut@mecka.net>
 Rules-Requires-Root: no
-Build-Depends:
+Build-Depends: dpkg-dev,
  debhelper-compat (= 13),
  libconfig-dev,
  doxygen,
  graphviz,
-Standards-Version: 4.6.1
+Standards-Version: 4.6.2
 Homepage: https://github.com/linux-usb-gadgets/libusbgx
 Vcs-Browser: https://salsa.debian.org/debian/libusbgx
 Vcs-Git: https://salsa.debian.org/debian/libusbgx.git
@@ -18,7 +18,7 @@ Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends:
- libusbgx2 (= ${binary:Version}),
+ libusbgx2t64 (= ${binary:Version}),
  ${misc:Depends},
 Description: Development files for libusbgx
  It provides routines for creating and parsing USB gadget devices using
@@ -26,7 +26,7 @@ Description: Development files for libusbgx
  be enabled in kernel release 3.11 (Linux for Workgroups!) are supported.
  .
  This package contains the header and development files needed to build
- programs and packages using libpng.
+ programs and packages using libusbgx2.
 
 Package: libusbgx-doc
 Architecture: all
@@ -43,7 +43,10 @@ Description: Documentation files for libusbgx
  This package contains the document files like examples files,
  and doxygen generated API documentation.
 
-Package: libusbgx2
+Package: libusbgx2t64
+Provides: ${t64:Provides}
+Replaces: libusbgx2
+Breaks: libusbgx2 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Depends:

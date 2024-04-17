@@ -1,4 +1,4 @@
-libusbgx.so.2 libusbgx2 #MINVER#
+libusbgx.so.2 libusbgx2t64 #MINVER#
 * Build-Depends-Package: libusbgx-dev
  function_types@Base 0.2.0
  gadget_attr_names@Base 0.2.0
