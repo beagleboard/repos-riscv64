@@ -8,8 +8,6 @@ Standards-Version: 4.5.1
 
 Package: bb-usb-gadgets
 Architecture: all
-Pre-Depends:
- gt
 Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
