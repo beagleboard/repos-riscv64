@@ -7,6 +7,8 @@ use feature 'switch';
 
 my $call_reboot = 0;
 
+my ($current_user) = getpwuid(1000);
+
 my ($filename, $conf);
 
 $filename = '/boot/firmware/sysconf.txt';
@@ -14,7 +16,7 @@ $filename = '/boot/firmware/sysconf.txt';
 logger('info', "Reading the system configuration settings from $filename");
 $conf = read_conf($filename);
 
-if (my $pass = delete($conf->{root_pw})) {
+if (my $pass = delete($conf->{root_password})) {
     my $pipe;
     logger('debug', 'Resetting root password');
     unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
@@ -27,18 +29,22 @@ if (my $pass = delete($conf->{root_pw})) {
     $call_reboot = 1;
 }
 
-if (my $user_pass = delete($conf->{debian_user_pw})) {
+if (my $user_pass = delete($conf->{user_password})) {
     my $pipe;
-    logger('debug', 'Resetting debian password');
+    logger('debug', "Resetting $current_user password");
     unless (open($pipe, '|-', '/usr/sbin/chpasswd')) {
-	my $err = $!;
-	logger('error', "Could not run chpasswd: $err");
-	die $err;
+        my $err = $!;
+        logger('error', "Could not run chpasswd: $err");
+        die $err;
     }
-    $pipe->print("debian:$user_pass");
+    $pipe->print("$current_user:$user_pass");
     close($pipe);
-    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
-    system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
+    if( -f "/etc/issue") {
+        system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue");
+    }
+    if( -f "/etc/issue.net") {
+        system("sed -i -e 's:\\] with a one time password of \\[temppwd\\]:\\]:g' /etc/issue.net");
+    }
     $call_reboot = 1;
 }
 
@@ -62,20 +68,20 @@ if (my $root_authorized_key = delete($conf->{root_authorized_key})) {
     $fh->close;
 }
 
-if (my $user_authorized_key = delete($conf->{debian_user_authorized_key})) {
+if (my $user_authorized_key = delete($conf->{user_authorized_key})) {
     my $fh;
-    logger('debug', "Adding key to debian's authorized_keys");
-    if(! -d "/home/debian/.ssh") {
-        if(!mkdir("/home/debian/.ssh", 0700)) {
-            my $err = sprintf("Could not create /home/debian/.ssh directory: %s", $!);
+    logger('debug', "Adding key to $current_user authorized_keys");
+    if(! -d "/home/$current_user/.ssh") {
+        if(!mkdir("/home/$current_user/.ssh", 0700)) {
+            my $err = sprintf("Could not create /home/$current_user/.ssh directory: %s", $!);
             logger('error', $err);
             die $err;
         }
     }
 
-    unless ($fh = IO::File->new('/home/debian/.ssh/authorized_keys', 'w', 0600)) {
+    unless ($fh = IO::File->new("/home/$current_user/.ssh/authorized_keys", 'w', 0600)) {
         my $err = $!;
-        logger('error', "Could not write /home/debian/.ssh/authorized_keys: $err");
+        logger('error', "Could not write /home/$current_user/.ssh/authorized_keys: $err");
         die $err;
     }
     $fh->print($user_authorized_key);
@@ -83,7 +89,31 @@ if (my $user_authorized_key = delete($conf->{debian_user_authorized_key})) {
 
     my $user = 1000;
     my $group = 1000;
-    system("chown -R $user:$group /home/debian/.ssh/");
+    system("chown -R $user:$group /home/$current_user/.ssh/");
+}
+
+if (my $new_user_name = delete($conf->{user_name})) {
+    logger('debug', "Changing $current_user to $new_user_name");
+    system("usermod --login $new_user_name --home /home/$new_user_name --move-home $current_user");
+    system("groupmod --new-name $new_user_name $current_user");
+    if( -f "/etc/issue") {
+        system("sed -i -e 's:\\[$current_user\\]:\\[$new_user_name\\]:g' /etc/issue");
+    }
+    if( -f "/etc/issue.net") {
+        system("sed -i -e 's:\\[$current_user\\]:\\[$new_user_name\\]:g' /etc/issue.net");
+    }
+    if( -f "/etc/lightdm/lightdm.conf") {
+        system("sed -i -e 's:autologin-user=$current_user:autologin-user=$new_user_name:g' /etc/lightdm/lightdm.conf");
+    }
+    if( -f "/usr/lib/systemd/system/bb-code-server.service") {
+        system("sed -i -e 's:User=$current_user:User=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
+        system("sed -i -e 's:Group=$current_user:Group=$new_user_name:g' /usr/lib/systemd/system/bb-code-server.service");
+        system("sed -i -e 's:/home/$current_user/:/home/$new_user_name/:g' /usr/lib/systemd/system/bb-code-server.service");
+        if( -f "/home/$new_user_name/.local/share/code-server/coder.json") {
+            system("sed -i -e 's:/home/$current_user:/home/$new_user_name:g' /home/$new_user_name/.local/share/code-server/coder.json");
+        }
+    }
+    $call_reboot = 1;
 }
 
 if (my $iwd_psk_file = delete($conf->{iwd_psk_file})) {
@@ -131,6 +161,16 @@ if (my $name = delete($conf->{hostname})) {
     $fha->print("ff02::1		ip6-allnodes\n");
     $fha->print("ff02::2		ip6-allrouters\n");
     $fha->close;
+    $call_reboot = 1;
+}
+
+if (my $new_keymap = delete($conf->{keymap})) {
+    system("/usr/lib/beagleboard-sys-mods/imager_custom set_keymap '$new_keymap'");
+    $call_reboot = 1;
+}
+
+if (my $new_timezone = delete($conf->{timezone})) {
+    system("/usr/lib/beagleboard-sys-mods/imager_custom set_timezone '$new_timezone'");
     $call_reboot = 1;
 }
 
@@ -218,19 +258,20 @@ q(# This file will be automatically evaluated and installed at next boot
 # leave no space to indicate the line is an example that could be
 # uncommented.
 
-# root_pw - Set a password for the root user (by default, it allows
-# for a passwordless login)
-#root_pw=FooBar
+# root_password - Set a password for the root user
+#root_password=FooBar
 
 # root_authorized_key - Set an authorized key for a root ssh login
 #root_authorized_key=
 
-# debian_user_pw - Set a password for the debian user (by default, it allows
-# for a passwordless login)
-#debian_user_pw=FooBar
+# user_name - Set a user name for the user (1000)
+#user_name=debian
 
-# debian_user_authorized_key - Set an authorized key for a debian ssh login
-#debian_user_authorized_key=
+# user_password - Set a password for user (1000)
+#user_password=FooBar
+
+# user_authorized_key - Set an authorized key for a user (1000) ssh login
+#user_authorized_key=
 
 # iwd_psk_file - Set a configuration for iwd https://wiki.archlinux.org/title/iwd
 #iwd_psk_file=
@@ -241,8 +282,11 @@ q(# This file will be automatically evaluated and installed at next boot
 # hostname - Set the system hostname.
 #hostname=BeagleBone
 
-# Legacy RNDIS support - Load usb gadget with RNDIS Support for Windows XP, Vista, 7, 8, and 10
-#legacy_rndis_support=enable
+# keymap - Set the system keymap.
+#keymap=us
+
+# timezone - Set the system timezone.
+#timezone=America/Chicago
 ));
 
     if (scalar keys %$conf) {
@@ -258,5 +302,4 @@ q(
     }
     $fh->close;
 }
-
 

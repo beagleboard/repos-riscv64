@@ -10,8 +10,8 @@ is_btrfs=$(cat /proc/cmdline | grep btrfs || true)
 if [ "x${is_btrfs}" = "x" ] ; then
 	if [ ! "x${ROOT_DRIVE}" = "x" ] ; then
 		if [ ! "x${ROOT_PARTITION}" = "x" ] ; then
-			echo "/usr/sbin/resize2fs ${ROOT_DRIVE}p${ROOT_PARTITION}"
-			/usr/sbin/resize2fs ${ROOT_DRIVE}p${ROOT_PARTITION}
+			echo "resize2fs ${ROOT_DRIVE}p${ROOT_PARTITION}"
+			resize2fs ${ROOT_DRIVE}p${ROOT_PARTITION}
 		fi
 	fi
 else
