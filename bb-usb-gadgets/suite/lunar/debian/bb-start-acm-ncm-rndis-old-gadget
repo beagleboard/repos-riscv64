@@ -75,6 +75,10 @@ usb_ms_ro=1
 #cpsw_4_mac = usb1 (BeagleBone Side)
 #cpsw_5_mac = usb1 (USB host, pc side)
 
+if [ -f /etc/default/usb-oem ] ; then
+	. /etc/default/usb-oem
+fi
+
 run_libcomposite () {
 	if [ ! -d /sys/kernel/config/usb_gadget/g_multi/ ] ; then
 		echo "${log} Creating g_multi"
