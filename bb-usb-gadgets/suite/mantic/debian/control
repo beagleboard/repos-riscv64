@@ -14,5 +14,6 @@ Depends:
  , bc
  , systemd
  , generic-sys-mods
+ , bb-beagle-version
 Description: usb gadget customizations
  usb gadget customizations
