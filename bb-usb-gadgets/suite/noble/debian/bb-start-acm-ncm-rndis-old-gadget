@@ -155,32 +155,32 @@ run_libcomposite () {
 		mkdir -p functions/acm.usb0
 		ln -s functions/acm.usb0 configs/c.1/
 
-		if [ ! "x${USB_IMAGE_FILE_DISABLED}" = "xyes" ]; then
-			if [ -f /etc/bbb.io/templates/beagle-getting-started.img ] ; then
-				echo "${log} enable USB mass_storage beagle-getting-started.img"
-				mkdir -p functions/mass_storage.usb0
-				echo ${usb_ms_stall} > functions/mass_storage.usb0/stall
-				echo ${usb_ms_cdrom} > functions/mass_storage.usb0/lun.0/cdrom
-				echo ${usb_ms_nofua} > functions/mass_storage.usb0/lun.0/nofua
-				echo ${usb_ms_removable} > functions/mass_storage.usb0/lun.0/removable
-				echo ${usb_ms_ro} > functions/mass_storage.usb0/lun.0/ro
-				echo /etc/bbb.io/templates/beagle-getting-started.img > functions/mass_storage.usb0/lun.0/file
+#		if [ ! "x${USB_IMAGE_FILE_DISABLED}" = "xyes" ]; then
+#			if [ -f /etc/bbb.io/templates/beagle-getting-started.img ] ; then
+#				echo "${log} enable USB mass_storage beagle-getting-started.img"
+#				mkdir -p functions/mass_storage.usb0
+#				echo ${usb_ms_stall} > functions/mass_storage.usb0/stall
+#				echo ${usb_ms_cdrom} > functions/mass_storage.usb0/lun.0/cdrom
+#				echo ${usb_ms_nofua} > functions/mass_storage.usb0/lun.0/nofua
+#				echo ${usb_ms_removable} > functions/mass_storage.usb0/lun.0/removable
+#				echo ${usb_ms_ro} > functions/mass_storage.usb0/lun.0/ro
+#				echo /etc/bbb.io/templates/beagle-getting-started.img > functions/mass_storage.usb0/lun.0/file
+#
+#				ln -s functions/mass_storage.usb0 configs/c.1/
+#			fi
+#		fi
 
-				ln -s functions/mass_storage.usb0 configs/c.1/
-			fi
-		fi
-
-		if [ "x${USB_BOOT_MMC_ENABLED}" = "xyes" ]; then
-			mkdir -p functions/mass_storage.usb1
-			echo ${usb_ms_stall} > functions/mass_storage.usb1/stall
-			echo ${usb_ms_cdrom} > functions/mass_storage.usb1/lun.0/cdrom
-			echo ${usb_ms_nofua} > functions/mass_storage.usb1/lun.0/nofua
-			echo ${usb_ms_removable} > functions/mass_storage.usb1/lun.0/removable
-			echo 0 > functions/mass_storage.usb1/lun.0/ro
-			echo ${ROOT_DRIVE}p1 > functions/mass_storage.usb1/lun.0/file
-
-			ln -s functions/mass_storage.usb1 configs/c.1/
-		fi
+#		if [ "x${USB_BOOT_MMC_ENABLED}" = "xyes" ]; then
+#			mkdir -p functions/mass_storage.usb1
+#			echo ${usb_ms_stall} > functions/mass_storage.usb1/stall
+#			echo ${usb_ms_cdrom} > functions/mass_storage.usb1/lun.0/cdrom
+#			echo ${usb_ms_nofua} > functions/mass_storage.usb1/lun.0/nofua
+#			echo ${usb_ms_removable} > functions/mass_storage.usb1/lun.0/removable
+#			echo 0 > functions/mass_storage.usb1/lun.0/ro
+#			echo ${ROOT_DRIVE}p1 > functions/mass_storage.usb1/lun.0/file
+#
+#			ln -s functions/mass_storage.usb1 configs/c.1/
+#		fi
 
 		#mkdir -p functions/mass_storage.usb0
 		#echo 0 > functions/mass_storage.usb0/stall
