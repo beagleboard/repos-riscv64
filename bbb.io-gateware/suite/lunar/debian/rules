@@ -3,7 +3,7 @@
 # output every command that modifies files on the build system.
 DH_VERBOSE = 1
 
-VERSION="BVF-0.4.0-27-g7078de9"
+VERSION="BVF-0.5.1-7-ga455aea"
 
 override_dh_auto_configure:
 	dpkg -x ./debian/bbb.io-gateware*.deb ./tmp/
