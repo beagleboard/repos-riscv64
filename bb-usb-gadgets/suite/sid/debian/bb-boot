@@ -9,4 +9,5 @@
 ##USB_BOOT_MMC_ENABLED=yes
 
 # Mainline Linux is removing RNDIS Support, NCM works in Windows 11...
-##USB_RNDIS_DISABLED=yes
+# RNDIS is also broken on RISCV
+USB_RNDIS_DISABLED=yes
