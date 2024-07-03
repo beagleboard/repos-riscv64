@@ -48,7 +48,7 @@ mirror="http://${proxy}${debian_server}"
 
 dist="sid"
 arch="riscv64"
-options="--exclude=debfoster --keyring= "
+options="--include=ca-certificates --exclude=debfoster --keyring= "
 setup_update_sbuild
 
 mirror="http://${proxy}${ubuntu_server}"
@@ -56,22 +56,22 @@ mirror="http://${proxy}${ubuntu_server}"
 
 dist="lunar"
 arch="riscv64"
-options="--exclude=debfoster"
+options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
 
 dist="mantic"
 arch="riscv64"
-options="--exclude=debfoster"
+options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
 
 dist="noble"
 arch="riscv64"
-options="--exclude=debfoster"
+options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
 
 dist="oracular"
 arch="riscv64"
-options="--exclude=debfoster"
+options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
 
 #

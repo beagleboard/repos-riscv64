@@ -48,4 +48,16 @@ apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
 
+#ubuntu 24.10 oracular:
+sudo sbuild-shell source:oracular-riscv64-sbuild
+
+apt-get update ; apt-get upgrade -yq ; apt-get install -yq ca-certificates ; \
+echo "deb http://192.168.1.10:3142/ports.ubuntu.com oracular main universe" > /etc/apt/sources.list ; \
+echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com oracular main universe" >> /etc/apt/sources.list ; \
+echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 oracular main" > /etc/apt/sources.list.d/beagle.list ; \
+echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 oracular main" >> /etc/apt/sources.list.d/beagle.list ; \
+apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
+cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
+apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
+
 #
