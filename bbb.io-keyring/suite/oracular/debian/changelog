@@ -1,4 +1,4 @@
-bbb.io-keyring (1.20240703.0-0~mantic+20240703) mantic; urgency=low
+bbb.io-keyring (1.20240703.0-0~oracular+20240703) oracular; urgency=low
 
   * Added Ubuntu Oracular to keyring
 

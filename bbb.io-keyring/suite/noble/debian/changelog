@@ -1,6 +1,6 @@
-bbb.io-keyring (1.20231206.0-0~noble+20231206) noble; urgency=low
+bbb.io-keyring (1.20240703.0-0~noble+20240703) noble; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Added Ubuntu Oracular to keyring
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 06 Dec 2023 12:10:50 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 03 Jul 2024 15:15:55 -0500
 
