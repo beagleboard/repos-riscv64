@@ -27,7 +27,12 @@ setup_update_sbuild () {
 	fi
 
 	if [ ! -f /var/lib/sbuild/${dist}-${arch}.tar.gz ] ; then
-		sbuild-createchroot ${options} --arch=${arch} --make-sbuild-tarball=/var/lib/sbuild/${dist}-${arch}.tar.gz ${dist} `mktemp -d` ${mirror}
+		if [ ! -f /var/lib/sbuild/${dist}-${arch}.tar ] ; then
+			sbuild-createchroot ${options} --arch=${arch} --make-sbuild-tarball=/var/lib/sbuild/${dist}-${arch}.tar ${dist} `mktemp -d` ${mirror}
+		else
+			chown -R root:root /var/lib/sbuild/${dist}-${arch}.tar
+			sbuild-update -udcar ${dist}-${arch}-sbuild
+		fi
 	else
 		chown -R root:root /var/lib/sbuild/${dist}-${arch}.tar.gz
 		sbuild-update -udcar ${dist}-${arch}-sbuild
