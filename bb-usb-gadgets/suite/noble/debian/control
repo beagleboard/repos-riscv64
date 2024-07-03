@@ -12,7 +12,7 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , bc
- , systemd
+ , systemd-dev
  , generic-sys-mods
  , bb-beagle-version
 Description: usb gadget customizations
