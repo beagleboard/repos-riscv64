@@ -191,6 +191,7 @@ start_run () {
 	suite="lunar" ; runner
 	suite="mantic" ; runner
 	suite="noble" ; runner
+	suite="oracular" ; runner
 }
 
 start_run

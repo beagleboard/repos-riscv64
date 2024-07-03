@@ -81,6 +81,7 @@ start_run () {
 	suite="lunar" ; runner
 	suite="mantic" ; runner
 	suite="noble" ; runner
+	suite="oracular" ; runner
 }
 
 cleanup () {
@@ -88,6 +89,7 @@ cleanup () {
 	suite="lunar" ; cleanup_suite
 	suite="mantic" ; cleanup_suite
 	suite="noble" ; cleanup_suite
+	suite="oracular" ; cleanup_suite
 }
 
 start_run
