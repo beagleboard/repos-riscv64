@@ -1,6 +1,6 @@
-bb-beagle-version (1.20231229.0-0~noble+20231229) noble; urgency=low
+bb-beagle-version (1.20240705.0-0~noble+20240705) noble; urgency=low
 
   * Add initial support for BeagleV-Fire
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 29 Dec 2023 10:07:03 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Jul 2024 13:40:50 -0500
 

@@ -112,13 +112,8 @@ fi
 pkg="bb-customizations" ; dpkg_check_version
 pkg="bb-usb-gadgets" ; dpkg_check_version
 
-if [ -d /home/ubuntu/ ] ; then
-	echo "groups:[`groups ubuntu`]"
-fi
-
-if [ -d /home/beagle/ ] ; then
-	echo "groups:[`groups beagle`]"
-fi
+USER_GROUPS=$(groups `id -nu 1000`)
+echo "groups:[${USER_GROUPS}]"
 
 echo "cmdline:[`cat /proc/cmdline`]"
 
