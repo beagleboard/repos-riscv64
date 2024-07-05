@@ -1,0 +1,40 @@
+#!/bin/sh -e
+
+version="$1"
+
+# passing the kernel version is required
+if [ -z "${version}" ] ; then
+	echo >&2 "W: zz-uenv_txt: ${DPKG_MAINTSCRIPT_PACKAGE:-kernel package} did not pass a version number"
+	exit 2
+fi
+
+device_model=$(cat /proc/device-tree/model | sed "s/ /_/g" | tr -d '\000')
+
+if [ "x${device_model}" = "xBeagleBoard_BeagleV-Fire" ] ; then
+	if [ -f /boot/firmware/boot.scr ] ; then
+		if [ -f /boot/vmlinuz-${version} ] ; then
+			rm -f /boot/firmware/mpfs-beaglev-fire.dtb || true
+			echo "Updating: mpfs-beaglev-fire Device Tree"
+			cp /usr/lib/linux-image-${version}/microchip/mpfs-beaglev-fire.dtb /boot/firmware/ || true
+
+			rm -f /boot/firmware/Image.gz || true
+			echo "Updating: /boot/firmware/Image.bz"
+			cp /boot/vmlinuz-${version} > /boot/firmware/Image.gz
+
+			if [ -f /boot/firmware/mpfs-beaglev-fire.dtb ] ; then
+				if [ -f /boot/firmware/Image.gz ] ; then
+					if [ ! -f /boot/firmware/beaglev_fire.its ] ; then
+						cp -v /etc/bbb.io/beaglev_fire.its /boot/firmware/beaglev_fire.its
+					fi
+
+					cd /boot/firmware/
+					mkimage -f beaglev_fire.its beaglev_fire.itb
+					cd -
+				fi
+			fi
+
+			echo "${version}" > /boot/firmware/kversion
+			echo "zz-uenv_txt: Updated extlinux.conf /boot/firmware/ for: [${version}]"
+		fi
+	fi
+fi

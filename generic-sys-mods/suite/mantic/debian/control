@@ -12,6 +12,7 @@ Depends:
  ${shlibs:Depends}
  , ${misc:Depends}
  , systemd
+ , console-setup
  , console-setup-linux
  , cloud-guest-utils
  , dos2unix
@@ -25,7 +26,8 @@ Depends:
  , lua5.1
  , psmisc
  , iw
- , unattended-upgrades
+ , u-boot-tools
  , ufw
+ , unattended-upgrades
 Description: System tweaks for the Generic Systems
  Various modifications to improve the performance or user experience.
