@@ -16,20 +16,47 @@ if [ "x${device_model}" = "xBeagleBoard_BeagleV-Fire" ] ; then
 			rm -f /boot/firmware/mpfs-beaglev-fire.dtb || true
 			echo "Updating: mpfs-beaglev-fire Device Tree"
 			cp /usr/lib/linux-image-${version}/microchip/mpfs-beaglev-fire.dtb /boot/firmware/ || true
+			cp /usr/lib/linux-image-${version}/microchip/mpfs-beaglev-fire.dtb /boot/ || true
 
-			rm -f /boot/firmware/Image.gz || true
-			echo "Updating: /boot/firmware/Image.bz"
-			cp /boot/vmlinuz-${version} > /boot/firmware/Image.gz
+			#Legacy
+			if [ -f /boot/firmware/Image ] ; then
+				rm -f /boot/firmware/Image || true
+			fi
 
-			if [ -f /boot/firmware/mpfs-beaglev-fire.dtb ] ; then
-				if [ -f /boot/firmware/Image.gz ] ; then
+			echo "Updating: /boot/Image.gz"
+			if [ -f /boot/Image ] ; then
+				rm -f /boot/Image || true
+			fi
+			cat /boot/vmlinuz-${version} | gunzip -d > /boot/Image
+
+			if [ -f /boot/Image.gz ] ; then
+				rm -f /boot/Image.gz || true
+			fi
+			gzip -9 /boot/Image -c > /boot/Image.gz
+
+			if [ -f /boot/firmware/Image.gz ] ; then
+				rm -f /boot/firmware/Image.gz || true
+			fi
+			cp /boot/Image.gz /boot/firmware/Image.gz
+
+			if [ -f /boot/mpfs-beaglev-fire.dtb ] ; then
+				if [ -f /boot/Image.gz ] ; then
+					echo "Updating: /boot/firmware/beaglev_fire.itb"
 					if [ ! -f /boot/firmware/beaglev_fire.its ] ; then
-						cp -v /etc/bbb.io/beaglev_fire.its /boot/firmware/beaglev_fire.its
+						cp -v /etc/bbb.io/templates/beaglev_fire.its /boot/firmware/beaglev_fire.its
+					fi
+					if [ ! -f /boot/beaglev_fire.its ] ; then
+						cp -v /etc/bbb.io/templates/beaglev_fire.its /boot/beaglev_fire.its
 					fi
 
-					cd /boot/firmware/
+					cd /boot/
 					mkimage -f beaglev_fire.its beaglev_fire.itb
 					cd -
+
+					if [ -f /boot/firmware/beaglev_fire.itb ] ; then
+						rm -f /boot/firmware/beaglev_fire.itb || true
+					fi
+					cp -v /boot/beaglev_fire.itb /boot/firmware/beaglev_fire.itb
 				fi
 			fi
 
