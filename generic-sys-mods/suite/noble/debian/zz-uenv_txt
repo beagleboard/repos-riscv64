@@ -14,7 +14,7 @@ if [ "x${device_model}" = "xBeagleBoard_BeagleV-Fire" ] ; then
 	if [ -f /boot/firmware/boot.scr ] ; then
 		if [ -f /boot/vmlinuz-${version} ] ; then
 			rm -f /boot/firmware/mpfs-beaglev-fire.dtb || true
-			echo "Updating: mpfs-beaglev-fire Device Tree"
+			echo "Updating: /boot/mpfs-beaglev-fire.dtb"
 			cp /usr/lib/linux-image-${version}/microchip/mpfs-beaglev-fire.dtb /boot/firmware/ || true
 			cp /usr/lib/linux-image-${version}/microchip/mpfs-beaglev-fire.dtb /boot/ || true
 
@@ -27,6 +27,7 @@ if [ "x${device_model}" = "xBeagleBoard_BeagleV-Fire" ] ; then
 			if [ -f /boot/Image ] ; then
 				rm -f /boot/Image || true
 			fi
+			###FIXME: gunzip is usually the default, but not always...
 			cat /boot/vmlinuz-${version} | gunzip -d > /boot/Image
 
 			if [ -f /boot/Image.gz ] ; then
@@ -34,17 +35,9 @@ if [ "x${device_model}" = "xBeagleBoard_BeagleV-Fire" ] ; then
 			fi
 			gzip -9 /boot/Image -c > /boot/Image.gz
 
-			if [ -f /boot/firmware/Image.gz ] ; then
-				rm -f /boot/firmware/Image.gz || true
-			fi
-			cp /boot/Image.gz /boot/firmware/Image.gz
-
 			if [ -f /boot/mpfs-beaglev-fire.dtb ] ; then
 				if [ -f /boot/Image.gz ] ; then
-					echo "Updating: /boot/firmware/beaglev_fire.itb"
-					if [ ! -f /boot/firmware/beaglev_fire.its ] ; then
-						cp -v /etc/bbb.io/templates/beaglev_fire.its /boot/firmware/beaglev_fire.its
-					fi
+					echo "Updating: /boot/beaglev_fire.itb"
 					if [ ! -f /boot/beaglev_fire.its ] ; then
 						cp -v /etc/bbb.io/templates/beaglev_fire.its /boot/beaglev_fire.its
 					fi
