@@ -1,3 +1,9 @@
+iwd (2.18-1bbbio1~mantic+20240705) mantic; urgency=low
+
+  * Rebuild for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Jul 2024 14:59:54 -0500
+
 iwd (2.18-1bbbio0~mantic+20240606) mantic; urgency=low
 
   * Rebuild for repos.rcn-ee.com
