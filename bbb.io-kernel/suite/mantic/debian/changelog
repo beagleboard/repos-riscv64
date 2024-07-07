@@ -1,7 +1,7 @@
-bbb.io-kernel (1.20240706.0-0~mantic+20240706) mantic; urgency=low
+bbb.io-kernel (1.20240707.0-0~mantic+20240707) mantic; urgency=low
 
   * Kernel Updates
-  * linux-image-6.6.35-mpfs-riscv64-r2
+  * linux-image-6.6.35-mpfs-riscv64-r3
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sat, 06 Jul 2024 13:10:32 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Sun, 07 Jul 2024 14:51:56 -0500
 
