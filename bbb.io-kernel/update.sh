@@ -79,6 +79,7 @@ do_lunar () {
 	wfile="control"
 	generate_header
 
+	msg="6.1-mpfs" ; var="mpfs-riscv64" ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
 	msg="6.6-mpfs" ; var="mpfs-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
 
 	changelog
@@ -92,6 +93,7 @@ do_mantic () {
 	wfile="control"
 	generate_header
 
+	msg="6.1-mpfs" ; var="mpfs-riscv64" ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
 	msg="6.6-mpfs" ; var="mpfs-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
 
 	changelog
@@ -105,6 +107,7 @@ do_noble () {
 	wfile="control"
 	generate_header
 
+	msg="6.1-mpfs" ; var="mpfs-riscv64" ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
 	msg="6.6-mpfs" ; var="mpfs-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
 
 	changelog

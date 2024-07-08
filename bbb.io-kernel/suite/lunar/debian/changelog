@@ -1,7 +1,7 @@
-bbb.io-kernel (1.20240707.0-0~lunar+20240707) lunar; urgency=low
+bbb.io-kernel (1.20240708.0-0~lunar+20240708) lunar; urgency=low
 
   * Kernel Updates
-  * linux-image-6.6.35-mpfs-riscv64-r3
+  * linux-image-6.1.33-mpfs-riscv64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Sun, 07 Jul 2024 14:51:56 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 08 Jul 2024 09:51:27 -0500
 
