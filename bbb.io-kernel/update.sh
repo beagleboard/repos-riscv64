@@ -62,6 +62,19 @@ generate_kernel_mpfs () {
 	fi
 }
 
+generate_kernel_xuantie () {
+	if [ ! "x${latest_kernel}" = "x" ] ; then
+		echo "" >> ./suite/${dist}/debian/${wfile}
+		echo "Package: bbb.io-kernel-${msg}" >> ./suite/${dist}/debian/${wfile}
+		echo "Section: metapackages" >> ./suite/${dist}/debian/${wfile}
+		echo "Architecture: riscv64" >> ./suite/${dist}/debian/${wfile}
+		echo "Pre-Depends: linux-image-${latest_kernel}" >> ./suite/${dist}/debian/${wfile}
+		echo "Depends: \${misc:Depends}, bbb.io-kernel-tasks (= \${source:Version})" >> ./suite/${dist}/debian/${wfile}
+		echo "Description: BeagleBoard.org ${msg}-riscv64 for xuantie-riscv64" >> ./suite/${dist}/debian/${wfile}
+		echo " This metapackage will install linux-image-${msg}-riscv64 for in Debian." >> ./suite/${dist}/debian/${wfile}
+	fi
+}
+
 changelog () {
 	git diff ./suite/${dist}/debian/control > /tmp/changelog-readme.diff
 	cat /tmp/changelog-readme.diff | grep +Pre-Depends: | awk '{print $2}' | awk -F ',' '{print $1}' > /tmp/changelog-readme.cat
@@ -79,8 +92,9 @@ do_lunar () {
 	wfile="control"
 	generate_header
 
-	msg="6.1-mpfs" ; var="mpfs-riscv64" ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
-	msg="6.6-mpfs" ; var="mpfs-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
+	msg="6.1-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
+	msg="6.6-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
+	msg="6.6-xuantie" ; var="xuantie-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_xuantie
 
 	changelog
 }
@@ -93,8 +107,9 @@ do_mantic () {
 	wfile="control"
 	generate_header
 
-	msg="6.1-mpfs" ; var="mpfs-riscv64" ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
-	msg="6.6-mpfs" ; var="mpfs-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
+	msg="6.1-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
+	msg="6.6-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
+	msg="6.6-xuantie" ; var="xuantie-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_xuantie
 
 	changelog
 }
@@ -107,8 +122,9 @@ do_noble () {
 	wfile="control"
 	generate_header
 
-	msg="6.1-mpfs" ; var="mpfs-riscv64" ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
-	msg="6.6-mpfs" ; var="mpfs-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
+	msg="6.1-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS61" ; current_kernel ; generate_kernel_mpfs
+	msg="6.6-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS66" ; current_kernel ; generate_kernel_mpfs
+	msg="6.6-xuantie" ; var="xuantie-riscv64" ; ver="LTS66" ; current_kernel ; generate_kernel_xuantie
 
 	changelog
 }
