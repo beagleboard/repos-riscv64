@@ -1,9 +1,9 @@
-bb-usb-gadgets (1.20240705.1-0~sid+20240705) sid; urgency=low
+bb-usb-gadgets (1.20240709.0-0~sid+20240709) sid; urgency=low
 
   * Mainline linux is removing RNDIS support, default to only NCM usb0 which works in Windows 11
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
   * Add eth1-DHCP.network example
   * RNDIS broken on riscv, just disable
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Jul 2024 13:55:57 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 09 Jul 2024 09:49:55 -0500
 
