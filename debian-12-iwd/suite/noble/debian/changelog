@@ -1,14 +1,19 @@
-iwd (2.18-1bbbio1~noble+20240705) noble; urgency=low
+iwd (2.19-1bbbio0~noble+20240710) noble; urgency=low
 
-  * Rebuild for repos.rcn-ee.com
+  * Rebuild iwd_2.19-1 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 05 Jul 2024 14:59:54 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 10 Jul 2024 21:18:59 -0500
 
-iwd (2.18-1bbbio0~noble+20240606) noble; urgency=low
+iwd (2.19-1) unstable; urgency=medium
 
-  * Rebuild for repos.rcn-ee.com
+  [ upstream ]
+  * new release;
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 06 Jun 2024 17:33:56 -0500
+  [ Jonas Smedegaard ]
+  * tighten build-dependency on libell-dev
+  * unfuzz patch 1001
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 10 Jul 2024 08:59:26 +0200
 
 iwd (2.18-1) unstable; urgency=medium
 
