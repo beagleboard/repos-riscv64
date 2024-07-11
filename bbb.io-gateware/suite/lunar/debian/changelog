@@ -1,6 +1,6 @@
-bbb.io-gateware (1.20240517.0-0~lunar+20240521) lunar; urgency=low
+bbb.io-gateware (1.20240517.1-0bbbio0~lunar+20240711) lunar; urgency=low
 
   * BVF-0.5.1-7-ga455aea
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 21 May 2024 16:11:35 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 11 Jul 2024 10:50:34 -0500
 
