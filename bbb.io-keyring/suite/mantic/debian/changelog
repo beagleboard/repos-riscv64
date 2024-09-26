@@ -1,6 +1,6 @@
-bbb.io-keyring (1.20240703.1-0~mantic+20240703) mantic; urgency=low
+bbb.io-keyring (1.20240926.0-0~mantic+20240926) mantic; urgency=low
 
-  * Added Ubuntu Oracular to keyring
+  * Added Debian Trixie to keyring
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 03 Jul 2024 15:27:49 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 26 Sep 2024 14:39:17 -0500
 

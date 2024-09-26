@@ -1,4 +1,4 @@
-bbb.io-keyring (1.20240926.0-0~noble+20240926) noble; urgency=low
+bbb.io-keyring (1.20240926.0-0~trixie+20240926) trixie; urgency=low
 
   * Added Debian Trixie to keyring
 
