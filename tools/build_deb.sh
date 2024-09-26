@@ -77,6 +77,7 @@ runner () {
 
 start_run () {
 	deb_arch="riscv64"
+	suite="trixie" ; runner
 	suite="sid" ; runner
 	suite="lunar" ; runner
 	suite="mantic" ; runner
@@ -85,6 +86,7 @@ start_run () {
 }
 
 cleanup () {
+	suite="trixie" ; cleanup_suite
 	suite="sid" ; cleanup_suite
 	suite="lunar" ; cleanup_suite
 	suite="mantic" ; cleanup_suite
