@@ -4,7 +4,7 @@
 
 package_name="bb-beagle-version"
 debian_pkg_name="${package_name}"
-package_version="1.20240705.0"
+package_version="1.20240930.0"
 package_source=""
 src_dir=""
 
@@ -19,7 +19,8 @@ debian_patch=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20240705"
-lunar_version="~lunar+20240705"
-mantic_version="~mantic+20240705"
-noble_version="~noble+20240705"
+trixie_version="~trixie+20240930"
+sid_version="~sid+20240930"
+lunar_version="~lunar+20240930"
+mantic_version="~mantic+20240930"
+noble_version="~noble+20240930"
