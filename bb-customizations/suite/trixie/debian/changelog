@@ -1,4 +1,4 @@
-bb-customizations (1.20240930.0-0~noble+20240930) noble; urgency=low
+bb-customizations (1.20240930.0-0~trixie+20240930) trixie; urgency=low
 
   * Add ubuntu mantic deb files
   * add 81-pwm-noroot.rules for auto export of pwm
