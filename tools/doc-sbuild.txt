@@ -22,17 +22,6 @@ apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
 
-#ubuntu 23.04 lunar:
-sudo sbuild-shell source:lunar-riscv64-sbuild
-
-echo "deb http://192.168.1.10:3142/ports.ubuntu.com lunar main universe" > /etc/apt/sources.list ; \
-echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com lunar main universe" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 lunar main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 lunar main" >> /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
-cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
-
 #ubuntu 23.10 mantic:
 sudo sbuild-shell source:mantic-riscv64-sbuild
 
