@@ -1,6 +1,0 @@
-apindex (2.2-1.20231128.0-0~mantic+20231128) mantic; urgency=low
-
-  * apindex for docker.io builders
-
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 28 Nov 2023 17:35:40 -0600
-

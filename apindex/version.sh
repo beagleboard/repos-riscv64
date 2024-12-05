@@ -2,7 +2,7 @@
 
 package_name="apindex"
 debian_pkg_name="${package_name}"
-package_version="2.2-1.20231128.0"
+package_version="2.2-1.20231128.1"
 package_source=""
 src_dir=""
 
@@ -17,12 +17,6 @@ debian_patch=""
 
 clear_changelog="enable"
 
-buster_version="~buster+20231128"
-bullseye_version="~bullseye+20231128"
-bookworm_version="~bookworm+20231128"
-trixie_version="~trixie+20231128"
-focal_version="~focal+20231128"
-jammy_version="~jammy+20231128"
-sid_version="~sid+20231128"
-lunar_version="~lunar+20231128"
-mantic_version="~mantic+20231128"
+trixie_version="~trixie+20241205"
+sid_version="~sid+20241205"
+noble_version="~noble+20241205"
