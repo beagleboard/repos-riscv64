@@ -29,7 +29,6 @@ start_run () {
 	deb_arch="riscv64"
 	suite="trixie" ; runner
 	suite="sid" ; runner
-	suite="mantic" ; runner
 	suite="noble" ; runner
 	suite="oracular" ; runner
 }

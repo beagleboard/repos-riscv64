@@ -63,16 +63,6 @@ if [ -d ${DIR}/suite/${suite}/ ] ; then
 fi
 
 dist="debian"
-suite="mantic"
-if [ -d ${DIR}/suite/${suite}/ ] ; then
-	rcn_ee_version="${mantic_version}"
-	cat ${DIR}/version.sh | grep -v mantic_version > ${DIR}/new-version.sh
-	echo "${suite}_version=\"~${suite}+${simple_date}\"" >> ${DIR}/new-version.sh
-	mv ${DIR}/new-version.sh ${DIR}/version.sh
-	run
-fi
-
-dist="debian"
 suite="noble"
 if [ -d ${DIR}/suite/${suite}/ ] ; then
 	rcn_ee_version="${noble_version}"
