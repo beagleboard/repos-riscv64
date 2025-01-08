@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 VERSION="BVF-0.5.1-25-g6ba5ed3"
-DATEC="1.20240517.0"
+DATEC="1.20250101.0"
 
 package_name="bbb.io-gateware"
 debian_pkg_name="${package_name}"
