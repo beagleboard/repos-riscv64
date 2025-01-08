@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
-VERSION="BVF-0.5.1-7-ga455aea"
+VERSION="BVF-0.5.1-25-g6ba5ed3"
 DATEC="1.20240517.0"
 
 package_name="bbb.io-gateware"
 debian_pkg_name="${package_name}"
-package_version="1.20240517.2"
+package_version="1.20250101.0"
 package_source=""
 src_dir=""
 
@@ -18,11 +18,10 @@ debian_version="${package_version}-0"
 debian_untar=""
 debian_patch=""
 
-debian_dl_1="https://openbeagle.org/beaglev-fire/gateware-snapshots/-/raw/main/${VERSION}/bbb.io-gateware_${DATEC}-0~lunar_all.deb"
+debian_dl_1="https://openbeagle.org/beaglev-fire/gateware-snapshots/-/raw/main/${VERSION}/bbb.io-gateware_${DATEC}-0~noble_all.deb"
 
 clear_changelog="enable"
 
-sid_version="~sid+20240711"
-lunar_version="~lunar+20240711"
-mantic_version="~mantic+20240711"
-noble_version="~noble+20240711"
+trixie_version="~trixie+20250108"
+sid_version="~sid+20250108"
+noble_version="~noble+20250108"

@@ -1,6 +1,6 @@
-bbb.io-gateware (1.20240517.2-0~sid+20240711) sid; urgency=low
+bbb.io-gateware (1.20250101.0-0~sid+20250108) sid; urgency=low
 
-  * BVF-0.5.1-7-ga455aea
+  * BVF-0.5.1-25-g6ba5ed3
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 11 Jul 2024 10:52:18 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 08 Jan 2025 15:03:42 -0600
 
