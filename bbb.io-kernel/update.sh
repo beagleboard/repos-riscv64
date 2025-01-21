@@ -100,38 +100,6 @@ do_trixie () {
 	changelog
 }
 
-do_lunar () {
-	#23.04
-	arch="riscv64"
-	dist="lunar"
-	debhelper="13"
-	wfile="control"
-	generate_header
-
-	msg="mainline"    ; var="riscv64"         ; ver="STABLE" ; current_kernel ; generate_mainline_kernel
-	msg="6.1-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS61X" ; current_kernel ; generate_kernel_mpfs
-	msg="6.6-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_mpfs
-	msg="6.6-xuantie" ; var="xuantie-riscv64" ; ver="LTS66X" ; current_kernel ; generate_kernel_xuantie
-
-	changelog
-}
-
-do_mantic () {
-	#23.10
-	arch="riscv64"
-	dist="mantic"
-	debhelper="13"
-	wfile="control"
-	generate_header
-
-	msg="mainline"    ; var="riscv64"         ; ver="STABLE" ; current_kernel ; generate_mainline_kernel
-	msg="6.1-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS61X" ; current_kernel ; generate_kernel_mpfs
-	msg="6.6-mpfs"    ; var="mpfs-riscv64"    ; ver="LTS66X" ; current_kernel ; generate_kernel_mpfs
-	msg="6.6-xuantie" ; var="xuantie-riscv64" ; ver="LTS66X" ; current_kernel ; generate_kernel_xuantie
-
-	changelog
-}
-
 do_noble () {
 	#24.04
 	arch="riscv64"
@@ -149,7 +117,5 @@ do_noble () {
 }
 
 do_trixie
-do_lunar
-do_mantic
 do_noble
 
