@@ -2,7 +2,7 @@
 
 package_name="bbb.io-xfce4-desktop"
 debian_pkg_name="${package_name}"
-package_version="1.20230413.0"
+package_version="1.20250128.0"
 package_source=""
 src_dir=""
 
@@ -17,5 +17,6 @@ debian_patch=""
 
 clear_changelog="enable"
 
-sid_version="~sid+20230414"
-lunar_version="~lunar+20230414"
+trixie_version="~trixie+20250128"
+sid_version="~sid+20250128"
+noble_version="~noble+20250128"
