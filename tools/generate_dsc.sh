@@ -188,7 +188,6 @@ start_run () {
 	dist="debian"
 	deb_arch="riscv64"
 	suite="trixie" ; runner
-	suite="sid" ; runner
 	suite="noble" ; runner
 	suite="oracular" ; runner
 }

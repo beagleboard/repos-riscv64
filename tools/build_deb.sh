@@ -78,14 +78,12 @@ runner () {
 start_run () {
 	deb_arch="riscv64"
 	suite="trixie" ; runner
-	suite="sid" ; runner
 	suite="noble" ; runner
 	suite="oracular" ; runner
 }
 
 cleanup () {
 	suite="trixie" ; cleanup_suite
-	suite="sid" ; cleanup_suite
 	suite="noble" ; cleanup_suite
 	suite="oracular" ; cleanup_suite
 }
