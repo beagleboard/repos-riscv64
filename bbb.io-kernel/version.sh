@@ -2,7 +2,7 @@
 
 package_name="bbb.io-kernel"
 debian_pkg_name="${package_name}"
-package_version="1.20250124.0"
+package_version="1.20250204.0"
 package_source=""
 src_dir=""
 
@@ -17,7 +17,5 @@ debian_patch=""
 
 clear_changelog="enable"
 
-lunar_version="~lunar+20241115"
-mantic_version="~mantic+20241115"
-trixie_version="~trixie+20250121"
-noble_version="~noble+20250121"
+trixie_version="~trixie+20250204"
+noble_version="~noble+20250204"
