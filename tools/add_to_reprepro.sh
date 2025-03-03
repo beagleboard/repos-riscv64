@@ -32,5 +32,9 @@ start_run () {
 	suite="oracular" ; runner
 }
 
-start_run
+if [ ! -f /tmp/cron.lock ] ; then
+	start_run
+else
+	echo "reprepro running"
+fi
 #
