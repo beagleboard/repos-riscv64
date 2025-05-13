@@ -1,6 +1,0 @@
-bbb.io-keyring (1.20240926.0-0~lunar+20240926) lunar; urgency=low
-
-  * Added Debian Trixie to keyring
-
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 26 Sep 2024 14:39:17 -0500
-
