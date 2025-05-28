@@ -1,8 +1,0 @@
-generic-sys-mods (1.20240930.0-0~mantic+20240930) mantic; urgency=low
-
-  * Call bb-setup-mac-address directly in the usb scripts
-  * add basic bbbio-set-sysconf.service
-  * raspi-config 20240424
-
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 30 Sep 2024 11:52:11 -0500
-
