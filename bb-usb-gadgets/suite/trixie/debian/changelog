@@ -1,9 +1,9 @@
-bb-usb-gadgets (1.20250605.1-0~trixie+20250617) trixie; urgency=low
+bb-usb-gadgets (1.20250605.2-0~trixie+20250617) trixie; urgency=low
 
   * Mainline linux is removing RNDIS support, in Debian 12/13 (Bookworm/Trixie), we default to only NCM usb0
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
   * Add eth1-DHCP.network example
   * RNDIS broken on riscv, just disable
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Jun 2025 08:20:16 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Jun 2025 10:33:16 -0500
 

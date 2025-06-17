@@ -2,7 +2,7 @@
 
 package_name="bb-usb-gadgets"
 debian_pkg_name="${package_name}"
-package_version="1.20250605.1"
+package_version="1.20250605.2"
 package_source=""
 src_dir=""
 
