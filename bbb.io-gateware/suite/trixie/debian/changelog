@@ -1,6 +1,6 @@
-bbb.io-gateware (1.20250101.0-0~trixie+20250108) trixie; urgency=low
+bbb.io-gateware (1.20250701.0-0~trixie+20250701) trixie; urgency=low
 
-  * BVF-0.5.1-25-g6ba5ed3
+  * BVF-0.5.1-50-g00f6c5d
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 08 Jan 2025 15:07:58 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 01 Jul 2025 17:48:25 -0500
 
