@@ -74,7 +74,7 @@ if [ -d /proc/device-tree/chosen/overlays/ ] ; then
 	ls /proc/device-tree/chosen/overlays/ -p | grep -v / | grep -v name | sed 's/^/UBOOT: Loaded Overlay:[/' | sed 's/$/]/'
 fi
 
-if [ -f /sys/kernel/debug/fpga/microchip_exec_update ] ; then
+if [ -f /sys/kernel/debug/fpga/microchip_exec_update ] || [ -d /sys/bus/spi/drivers/microchip_mpf_spi_fpga_mgr ]; then
 
 	###FIXME: loop over directory and dummp file...
 	if [ -f /proc/device-tree/chosen/overlays/DEFAULT-CAPE-GATEWARE ] ; then
