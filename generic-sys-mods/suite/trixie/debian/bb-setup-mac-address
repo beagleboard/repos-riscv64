@@ -21,6 +21,8 @@ is_mac_valid () {
 	#Some devices are showing a blank mac_addr0 [00:00:00:00:00:00], let's fix that up...
 	if [ "x${mac_addr0}" = "x00:00:00:00:00:00" ] ; then
 		unset is_valid
+	elif [ "x${mac_addr0}" = "x" ] ; then
+		unset is_valid
 	else
 		is_valid=true
 	fi
@@ -39,14 +41,14 @@ get_mac_addr () {
 		mac_address="/proc/device-tree/soc/ethernet@20110000/mac-address"
 		if [ -f ${mac_address} ] ; then
 			mac_addr0=$(hexdump -v -e '1/1 "%02X" ":"' ${mac_address} | sed 's/.$//')
-			echo "${log} ethernet@20110000: ${mac_addr0}"
+			echo "${log} ethernet@20110000: [${mac_addr0}]"
 			is_mac_valid
 		fi
 
 		mac_address="/proc/device-tree/soc/ethernet@ffe7060000/local-mac-address"
 		if [ -f ${mac_address} ] ; then
 			mac_addr0=$(hexdump -v -e '1/1 "%02X" ":"' ${mac_address} | sed 's/.$//')
-			echo "${log} ethernet@ffe7060000: ${mac_addr0}"
+			echo "${log} ethernet@ffe7060000: [${mac_addr0}]"
 			is_mac_valid
 		fi
 
@@ -57,7 +59,7 @@ get_mac_addr () {
 	if [ "x${is_valid}" = "x" ] ; then
 		echo "${log} mac came up 00:00:00:00:00:00 fixing..."
 		mac_addr0="1C:BA:8C:A2:ED:68"
-		echo "${log} eth0: ${mac_addr0}"
+		echo "${log} eth0: [${mac_addr0}]"
 	fi
 }
 
