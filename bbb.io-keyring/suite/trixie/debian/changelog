@@ -1,6 +1,6 @@
-bbb.io-keyring (1.20250813.0-0~trixie+20250813) trixie; urgency=low
+bbb.io-keyring (1.20250813.1-0~trixie+20250813) trixie; urgency=low
 
-  * Rebuild bbb.io-keyring_1.20250813.0-0 for repos.rcn-ee.com
+  * Rebuild bbb.io-keyring_1.20250813.1-0 for repos.rcn-ee.com
 
- -- Robert Nelson <robertcnelson@gmail.com>  Wed, 13 Aug 2025 17:19:30 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Wed, 13 Aug 2025 17:30:09 -0500
 

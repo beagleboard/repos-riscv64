@@ -33,7 +33,7 @@ start_run () {
 	dist="debian-trixie-riscv64"
 	suite="trixie" ; runner
 
-	dist="debian-forky-armhf"
+	dist="debian-forky-riscv64"
 	suite="forky" ; runner
 }
 
