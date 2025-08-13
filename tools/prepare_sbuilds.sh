@@ -51,6 +51,11 @@ arch="riscv64"
 options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
 
+dist="forky"
+arch="riscv64"
+options="--include=ca-certificates --exclude=debfoster"
+setup_update_sbuild
+
 mirror="http://${proxy}${ubuntu_server}"
 #deboot="gutsy"
 
