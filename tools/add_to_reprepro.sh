@@ -29,10 +29,12 @@ start_run () {
 	deb_arch="riscv64"
 	suite="noble" ; runner
 	suite="trixie" ; runner
-	suite="oracular" ; runner
 
 	dist="debian-trixie-riscv64"
 	suite="trixie" ; runner
+
+	dist="debian-forky-armhf"
+	suite="forky" ; runner
 }
 
 if [ ! -f /tmp/cron.lock ] ; then

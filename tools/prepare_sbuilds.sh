@@ -64,9 +64,4 @@ arch="riscv64"
 options="--include=ca-certificates --exclude=debfoster"
 setup_update_sbuild
 
-dist="oracular"
-arch="riscv64"
-options="--include=ca-certificates --exclude=debfoster"
-setup_update_sbuild
-
 #

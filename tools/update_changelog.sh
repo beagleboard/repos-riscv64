@@ -53,20 +53,20 @@ if [ -d ${DIR}/suite/${suite}/ ] ; then
 fi
 
 dist="debian"
-suite="noble"
+suite="forky"
 if [ -d ${DIR}/suite/${suite}/ ] ; then
-	rcn_ee_version="${noble_version}"
-	cat ${DIR}/version.sh | grep -v noble_version > ${DIR}/new-version.sh
+	rcn_ee_version="${forky_version}"
+	cat ${DIR}/version.sh | grep -v forky_version > ${DIR}/new-version.sh
 	echo "${suite}_version=\"~${suite}+${simple_date}\"" >> ${DIR}/new-version.sh
 	mv ${DIR}/new-version.sh ${DIR}/version.sh
 	run
 fi
 
 dist="debian"
-suite="oracular"
+suite="noble"
 if [ -d ${DIR}/suite/${suite}/ ] ; then
-	rcn_ee_version="${oracular_version}"
-	cat ${DIR}/version.sh | grep -v oracular_version > ${DIR}/new-version.sh
+	rcn_ee_version="${noble_version}"
+	cat ${DIR}/version.sh | grep -v noble_version > ${DIR}/new-version.sh
 	echo "${suite}_version=\"~${suite}+${simple_date}\"" >> ${DIR}/new-version.sh
 	mv ${DIR}/new-version.sh ${DIR}/version.sh
 	run

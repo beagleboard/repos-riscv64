@@ -1,0 +1,2 @@
+deb [arch=riscv64 signed-by=/usr/share/keyrings/rcn-ee-2025-archive-keyring.gpg] https://rcn-ee.com/repos/debian-forky-riscv64/ forky main
+deb-src [arch=riscv64 signed-by=/usr/share/keyrings/rcn-ee-2025-archive-keyring.gpg] https://rcn-ee.com/repos/debian-forky-riscv64/ forky main
