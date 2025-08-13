@@ -5,19 +5,19 @@ sudo sbuild-shell source:trixie-riscv64-sbuild
 
 echo "deb http://192.168.1.10/debian trixie main" > /etc/apt/sources.list ; \
 echo "deb-src http://192.168.1.10/debian trixie main" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 trixie main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 trixie main" >> /etc/apt/sources.list.d/beagle.list ; \
+echo "deb [trusted=yes] https://rcn-ee.com/repos/debian-trixie-riscv64/ trixie main" > /etc/apt/sources.list.d/beagle.list ; \
+echo "deb-src [trusted=yes] https://rcn-ee.com/repos/debian-trixie-riscv64/ trixie main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
 
-#debian sid:
-sudo sbuild-shell source:sid-riscv64-sbuild
+#debian forky:
+sudo sbuild-shell source:forky-riscv64-sbuild
 
-echo "deb http://192.168.1.10/debian sid main" > /etc/apt/sources.list ; \
-echo "deb-src http://192.168.1.10/debian sid main" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 sid main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 sid main" >> /etc/apt/sources.list.d/beagle.list ; \
+echo "deb http://192.168.1.10/debian forky main" > /etc/apt/sources.list ; \
+echo "deb-src http://192.168.1.10/debian forky main" >> /etc/apt/sources.list ; \
+echo "deb [trusted=yes] https://rcn-ee.com/repos/debian-forky-riscv64/ forky main" > /etc/apt/sources.list.d/beagle.list ; \
+echo "deb-src [trusted=yes] https://rcn-ee.com/repos/debian-forky-riscv64/ forky main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
@@ -29,17 +29,6 @@ echo "deb http://192.168.1.10:3142/ports.ubuntu.com noble main universe" > /etc/
 echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com noble main universe" >> /etc/apt/sources.list ; \
 echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 noble main" > /etc/apt/sources.list.d/beagle.list ; \
 echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 noble main" >> /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
-cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
-apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
-
-#ubuntu 24.10 oracular:
-sudo sbuild-shell source:oracular-riscv64-sbuild
-
-echo "deb http://192.168.1.10:3142/ports.ubuntu.com oracular main universe" > /etc/apt/sources.list ; \
-echo "deb-src http://192.168.1.10:3142/ports.ubuntu.com oracular main universe" >> /etc/apt/sources.list ; \
-echo "deb [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 oracular main" > /etc/apt/sources.list.d/beagle.list ; \
-echo "deb-src [trusted=yes] http://repos.rcn-ee.com/debian-riscv64 oracular main" >> /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt-get install -yq bbb.io-keyring ; \
 cp -v /etc/bbb.io/templates/apt/sbuild.list /etc/apt/sources.list.d/beagle.list ; \
 apt-get update ; apt-get upgrade -yq ; apt clean ; echo "done..." ; exit
