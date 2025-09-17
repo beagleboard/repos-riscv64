@@ -28,7 +28,6 @@ start_run () {
 	dist="debian-riscv64"
 	deb_arch="riscv64"
 	suite="noble" ; runner
-	suite="trixie" ; runner
 
 	dist="debian-trixie-riscv64"
 	suite="trixie" ; runner
