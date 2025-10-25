@@ -2,7 +2,7 @@
 
 #https://packages.debian.org/source/trixie/chromium
 
-mirror="http://security.debian.org/debian-security/pool/updates"
+mirror="http://security.debian.org/debian-security"
 
 package_name="chromium"
 debian_pkg_name="${package_name}"
@@ -13,7 +13,7 @@ src_dir="${package_name}-${package_version}"
 git_repo=""
 git_sha=""
 reprepro_dir="c/${package_name}"
-dl_path="pool/main/${reprepro_dir}/"
+dl_path="pool/updates/main/${reprepro_dir}/"
 
 debian_version="${package_version}-1~deb13u1"
 debian_untar="${package_name}_${debian_version}.debian.tar.xz"
