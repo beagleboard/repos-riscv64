@@ -2,7 +2,7 @@
 
 #https://packages.debian.org/source/trixie/chromium
 
-mirror="http://http.debian.net/debian"
+mirror="http://security.debian.org/debian-security/pool/updates"
 
 package_name="chromium"
 debian_pkg_name="${package_name}"
