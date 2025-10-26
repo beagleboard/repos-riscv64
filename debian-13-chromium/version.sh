@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+#http://192.168.1.10/debian/pool/main/c/chromium/
 #https://packages.debian.org/source/trixie/chromium
 
 mirror="http://192.168.1.10/debian"
