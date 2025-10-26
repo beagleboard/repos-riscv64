@@ -95,6 +95,9 @@ endif
 ifeq (ppc64el,$(DEB_HOST_ARCH))
 defines+=host_cpu=\"ppc64\" use_vaapi=true
 endif
+ifeq (riscv64,$(DEB_HOST_ARCH))
+defines+=host_cpu=\"riscv64\" use_v4l2_codec=true use_vaapi=false
+endif
 
 ifdef cross_pkg_config
 defines+=pkg_config=\"$(cross_pkg_config)\"
