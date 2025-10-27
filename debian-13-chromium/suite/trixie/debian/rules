@@ -96,7 +96,7 @@ ifeq (ppc64el,$(DEB_HOST_ARCH))
 defines+=host_cpu=\"ppc64\" use_vaapi=true
 endif
 ifeq (riscv64,$(DEB_HOST_ARCH))
-defines+=host_cpu=\"riscv64\" use_v4l2_codec=true use_vaapi=false
+defines+=host_cpu=\"riscv64\" use_v4l2_codec=false use_vaapi=false
 endif
 
 ifdef cross_pkg_config
@@ -157,8 +157,8 @@ defines+=use_gio=true \
          use_system_freetype=true \
          use_system_harfbuzz=true \
          use_system_libopenjpeg2=true \
-         proprietary_codecs=true \
-         ffmpeg_branding=\"Chrome\" \
+         proprietary_codecs=false \
+         ffmpeg_branding=\"Chromium\" \
          disable_fieldtrial_testing_config=true \
 
 # handle parallel build options
