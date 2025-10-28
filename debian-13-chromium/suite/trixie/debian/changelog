@@ -1,3 +1,9 @@
+chromium (141.0.7390.107-1~deb13u1bbbio5~trixie+20251027) trixie; urgency=low
+
+  * Rebuild chromium_141.0.7390.107-1~deb13u1 for repos.rcn-ee.com
+
+ -- Robert Nelson <robertcnelson@gmail.com>  Mon, 27 Oct 2025 19:23:27 -0500
+
 chromium (141.0.7390.107-1~deb13u1bbbio4~trixie+20251026) trixie; urgency=low
 
   * Rebuild chromium_141.0.7390.107-1~deb13u1 for repos.rcn-ee.com
