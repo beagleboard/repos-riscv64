@@ -21,7 +21,7 @@ Description: BeagleBoard.org Kernel Branches
 Package: bbb.io-kernel-mainline
 Section: metapackages
 Architecture: riscv64
-Pre-Depends: linux-image-6.19.0-rc3-riscv64-r1
+Pre-Depends: linux-image-6.19.0-rc5-riscv64-r1
 Depends: ${misc:Depends}, bbb.io-kernel-tasks (= ${source:Version})
 Description: BeagleBoard.org Mainline
  This metapackage will install Mainline in Debian.
