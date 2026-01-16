@@ -1,4 +1,4 @@
-generic-sys-mods (1.20260115.0-0~noble+20260116) noble; urgency=low
+generic-sys-mods (1.20260115.0-0~forky+20260116) forky; urgency=low
 
   * Call bb-setup-mac-address directly in the usb scripts
   * add basic bbbio-set-sysconf.service
