@@ -1,0 +1,2 @@
+tmp/usr/share/beagleboard/gateware/* /usr/share/beagleboard/gateware
+tmp/usr/share/microchip/gateware/* /usr/share/microchip/gateware
