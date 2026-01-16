@@ -102,6 +102,11 @@ if [ -f /sys/kernel/debug/fpga/microchip_exec_update ] || [ -d /sys/bus/spi/driv
 		echo "UBOOT: Loaded Overlay:[ROBOTICS-CAPE-GATEWARE]:[${version}]"
 	fi
 
+	if [ -f /proc/device-tree/chosen/overlays/SPI-1-DRIVES-ADC ] ; then
+		version=$(cat /proc/device-tree/chosen/overlays/SPI-1-DRIVES-ADC | head -n1 || true)
+		echo "UBOOT: Loaded Overlay:[SPI-1-DRIVES-ADC]:[${version}]"
+	fi
+
 	if [ -f /usr/share/beagleboard/gateware/version.txt ] ; then
 		version=$(cat /usr/share/beagleboard/gateware/version.txt | head -n1 || true)
 		echo "SYSTEM: Gateware Version:[${version}]"

@@ -1,4 +1,4 @@
-bb-beagle-version (1.20260116.0-0~noble+20260116) noble; urgency=low
+bb-beagle-version (1.20260116.0-0~forky+20260116) forky; urgency=low
 
   * Add initial support for BeagleV-Fire
 
