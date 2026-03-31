@@ -1,7 +1,7 @@
-bbb.io-kernel (1.20260317.0-0~noble+20260317) noble; urgency=low
+bbb.io-kernel (1.20260331.0-0~noble+20260331) noble; urgency=low
 
   * Kernel Updates
-  * linux-image-7.0.0-rc4-riscv64-r1
+  * linux-image-7.0.0-rc6-riscv64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Tue, 17 Mar 2026 10:11:05 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 31 Mar 2026 10:09:46 -0500
 
