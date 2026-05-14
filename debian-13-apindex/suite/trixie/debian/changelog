@@ -1,6 +1,6 @@
-apindex (2.2-1.20231128.1-0~trixie+20241205) trixie; urgency=low
+apindex (2.2-1.20231128.2-0~trixie+20260514) trixie; urgency=low
 
   * apindex for docker.io builders
 
- -- Robert Nelson <robertcnelson@gmail.com>  Thu, 05 Dec 2024 11:04:05 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 May 2026 16:47:41 -0500
 
