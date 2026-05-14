@@ -2,7 +2,7 @@
 
 package_name="bb-usb-gadgets"
 debian_pkg_name="${package_name}"
-package_version="1.20250605.2"
+package_version="1.20260513.0"
 package_source=""
 src_dir=""
 
@@ -17,5 +17,6 @@ debian_patch=""
 
 clear_changelog="enable"
 
-trixie_version="~trixie+20250617"
-noble_version="~noble+20250617"
+trixie_version="~trixie+20260514"
+forky_version="~forky+20260514"
+noble_version="~noble+20260514"

@@ -1,4 +1,4 @@
-bb-usb-gadgets (1.20260513.0-0~trixie+20260514) trixie; urgency=low
+bb-usb-gadgets (1.20260513.0-0~forky+20260514) forky; urgency=low
 
   * Mainline linux is removing RNDIS support, in Debian 12/13 (Bookworm/Trixie), we default to only NCM usb0
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
