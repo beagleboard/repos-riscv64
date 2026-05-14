@@ -1,6 +1,6 @@
-bbb.io-gateware (1.20260116.0-0~noble+20260116) noble; urgency=low
+bbb.io-gateware (1.20260506.0-0~noble+20260514) noble; urgency=low
 
-  * 2025.10-2-g4e16f48
+  * 2025.10-13-g943f37f
 
- -- Robert Nelson <robertcnelson@gmail.com>  Fri, 16 Jan 2026 14:24:24 -0600
+ -- Robert Nelson <robertcnelson@gmail.com>  Thu, 14 May 2026 17:20:19 -0500
 

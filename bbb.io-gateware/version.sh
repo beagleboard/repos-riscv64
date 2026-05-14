@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-VERSION="2025.10-2-g4e16f48"
-DATEC="1.20260107"
+VERSION="2025.10-13-g943f37f"
+DATEC="1.20260506"
 
 package_name="bbb.io-gateware"
 debian_pkg_name="${package_name}"
@@ -22,6 +22,6 @@ debian_dl_1="http://forgejo.gfnd.rcn-ee.org:3000/BeagleBoard.org/gateware-snapsh
 
 clear_changelog="enable"
 
-trixie_version="~trixie+20260116"
-forky_version="~forky+20260116"
-noble_version="~noble+20260116"
+trixie_version="~trixie+20260514"
+forky_version="~forky+20260514"
+noble_version="~noble+20260514"
