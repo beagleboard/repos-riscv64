@@ -2,3 +2,4 @@
   * Automatically generate /etc/default/bb-mac-addr if file doesnt exist
   * Add eth1-DHCP.network example
   * RNDIS broken on riscv, just disable
+  * Cleanup usb0-DHCPServer.network and add usb0 (PocketBeagle) only usb0-only-DHCPServer.network
