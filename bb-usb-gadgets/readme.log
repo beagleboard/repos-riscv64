@@ -3,3 +3,4 @@
   * Add eth1-DHCP.network example
   * RNDIS broken on riscv, just disable
   * Cleanup usb0-DHCPServer.network and add usb0 (PocketBeagle) only usb0-only-DHCPServer.network
+  * systemd.network 256 needs PersistLeases=runtime https://forum.beagleboard.org/t/pocketbeagle-2-not-reachable-using-local-network-via-usb-tethering-on-macos-26-5/44010/23
