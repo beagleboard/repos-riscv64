@@ -18,7 +18,7 @@ debian_version="${package_version}-0"
 debian_untar=""
 debian_patch=""
 
-debian_dl_1="http://forgejo.gfnd.rcn-ee.org:3000/BeagleBoard.org/gateware-snapshots/raw/branch/main/${VERSION}/bbb.io-gateware_${DATEC}.0-0~trixie_all.deb"
+debian_dl_1="https://forgejo.gfnd.rcn-ee.org:3000/BeagleBoard.org/gateware-snapshots/raw/branch/main/${VERSION}/bbb.io-gateware_${DATEC}.0-0~trixie_all.deb"
 
 clear_changelog="enable"
 
