@@ -1,7 +1,7 @@
-bbb.io-kernel (1.20260727.0-0~trixie+20260727) trixie; urgency=low
+bbb.io-kernel (1.20260804.0-0~trixie+20260804) trixie; urgency=low
 
   * Kernel Updates
-  * linux-image-7.2.0-rc5-riscv64-r1
+  * linux-image-7.2.0-rc6-riscv64-r1
 
- -- Robert Nelson <robertcnelson@gmail.com>  Mon, 27 Jul 2026 08:45:26 -0500
+ -- Robert Nelson <robertcnelson@gmail.com>  Tue, 04 Aug 2026 09:12:14 -0500
 
